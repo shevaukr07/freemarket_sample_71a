@@ -43,9 +43,6 @@ Things you may want to cover:
 |buyer|integer||
 
 
-
-
-
 ### Association
 - belongs_to :sizes
 - belongs_to :commodoty_condition
