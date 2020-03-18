@@ -21,7 +21,6 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
 
 ## itemsテーブル
 
@@ -44,9 +43,125 @@ Things you may want to cover:
 
 
 ### Association
-- belongs_to :sizes
+- belongs_to :user
+- belongs_to :categorie
+- belongs_to :size
 - belongs_to :commodoty_condition
 - belongs_to :brand
 - belongs_to :shipping_charge
+- belongs_to :shipping_mathod
+- belomgs_to :prefecture
+- belongs_to :shipping_day
 - has_many :item_images
-- has_many :item_categories
+
+## categoriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|string||
+|text|string|null: false,unique:true|
+|ancestry|string|index: true|
+
+### association
+- has_many: items
+
+## item_imagesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|string||
+|image|string|null: false|
+
+### association
+- belongs_to: item
+
+## sizesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|string||
+|text|string|null: false|
+
+### association
+- has_many: items
+
+## commodity_conditionsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|string||
+|text|string|null: false|
+
+### association
+- has_many: items
+
+## brandsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|string||
+|text|string|null: false|
+
+### association
+- has_many: items
+
+## shipping_chargesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|string||
+|text|string|null: false|
+
+### association
+- has_many: items
+
+## prefecturesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|string||
+|text|string|null: false|
+
+### association
+- has_many: items
+
+## shipping_daysテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|string||
+|text|string|null: false|
+
+### association
+- has_many: items
+
+## cardsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|string||
+|user_id|integer|null: false|
+
+### association
+- belongs_to: user
+
+## shipping_mathodsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|string||
+|text|string|null: false|
+
+### association
+- has_many: items
+
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|id|string||
+|nickname|string|null: false|
+|name|string|null: false|
+|mailaddress|string|null: false,unique:true|
+|password|string|null: false,unique: true|
+|furigana|string|null: false|
+|birthday|string|null: false|
+|sendaddress|string|null: false|
+|sendname|string|null: false|
+|postalcode|string|null: false|
+|prefecture_id|integer|foreign_key: true|
+|city|string|null: false|
+|housenumber|string|null: false|
+
+### association
+- has_many: items
+- has_many: cards
