@@ -36,7 +36,7 @@ Things you may want to cover:
 |commodity_condition_id|integer|foreign_key: true|
 |shippig_charge_id|integer|foreign_key: true|
 |shippig_method_id|integer|foreign_key: true|
-|prefecture_id|integer|foreign_key: true|
+|prefecture_id|integer|null: false|
 |shippig_day_id|integer|foreign_key: true|
 |purchase|integer||
 |buyer|integer||
@@ -44,15 +44,16 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- belongs_to :categorie
+- belongs_to :category
 - belongs_to :size
 - belongs_to :commodoty_condition
 - belongs_to :brand
 - belongs_to :shipping_charge
 - belongs_to :shipping_mathod
-- belomgs_to :prefecture
+- belongs_to :prefecture
 - belongs_to :shipping_day
 - has_many :item_images
+- belongs_to_active_hash: prefecture
 
 ## categoriesテーブル
 |Column|Type|Options|
@@ -68,6 +69,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|string||
+|item_id|integer|foreign_key: true|
 |image|string|null: false|
 
 ### association
@@ -109,20 +111,6 @@ Things you may want to cover:
 ### association
 - has_many: items
 
-## prefecturesテーブル
-|Column|Type|Options|
-|------|----|-------|
-|id|string||
-|prefeurure_data_id|integer|null: false|
-|text|string|null: false|
-
-
-
-### association
-- belongs_to_active_hash: prefecture_data
-- has_many: items
-- has_many: users
-
 ## shipping_daysテーブル
 |Column|Type|Options|
 |------|----|-------|
@@ -163,7 +151,7 @@ Things you may want to cover:
 |sendaddress|string|null: false|
 |sendname|string|null: false|
 |postalcode|string|null: false|
-|prefecture_id|integer|foreign_key: true|
+|prefecture_id|integer|null: false|
 |city|string|null: false|
 |housenumber|string|null: false|
 
@@ -171,3 +159,4 @@ Things you may want to cover:
 - has_many: items
 - has_many: cards
 - belongs_to: prefecture
+- belongs_to_active_hash: prefecture
