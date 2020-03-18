@@ -50,7 +50,6 @@ Things you may want to cover:
 - belongs_to :brand
 - belongs_to :shipping_charge
 - belongs_to :shipping_mathod
-- belongs_to :prefecture
 - belongs_to :shipping_day
 - has_many :item_images
 - belongs_to_active_hash: prefecture
@@ -158,5 +157,4 @@ Things you may want to cover:
 ### association
 - has_many: items
 - has_many: cards
-- belongs_to: prefecture
 - belongs_to_active_hash: prefecture
