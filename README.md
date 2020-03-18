@@ -113,10 +113,15 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|string||
+|prefeurure_data_id|integer|null: false|
 |text|string|null: false|
 
+
+
 ### association
+- belongs_to_active_hash: prefecture_data
 - has_many: items
+- has_many: users
 
 ## shipping_daysテーブル
 |Column|Type|Options|
@@ -165,3 +170,4 @@ Things you may want to cover:
 ### association
 - has_many: items
 - has_many: cards
+- belongs_to: prefecture
