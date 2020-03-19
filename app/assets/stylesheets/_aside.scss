@@ -1,0 +1,31 @@
+.aside {
+  background-image: url(material/pict/bg-appBanner-pict.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 10rem 4rem;
+  &__contents {
+    color: #ffffff;
+    text-align: center;
+    &__title {
+      font-size: 2.4rem;
+      line-height: 1.4;
+      font-weight: bold;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
+    &__text {
+      font-size: 3.5rem;
+      text-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
+  }
+}
+
+
+// %aside.aside
+//   .aside_contents
+//     %h2
+//     %p
+//     .dr-btns
+//         = link_to '/', class: "a-btn" do
+//           = image_tag "app_logo/app_store.png", alt: "AppStoreで入手", class: "btn-image"
+//         = link_to '/', class: "g-btn" do
+//           = image_tag "app_logo/google_play.png", alt: "Goole Playで入手", class: "btn-image"

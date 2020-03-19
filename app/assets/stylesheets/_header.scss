@@ -1,0 +1,111 @@
+.header {
+  .header-contents {
+    padding: 0 6rem;
+    width: 70%;
+    margin: 0 auto;
+    &__main {
+      width: 100%;
+      min-height: 8.2rem;
+      margin: 0 auto;
+      padding: 1.5rem 0 0;
+      margin: 0 auto;
+      display: flex;
+      text-align: center;
+      .icon {
+        vertical-align: bottom;
+        padding-bottom: 1rem;
+        margin: 0 3rem 0 0;
+        display: flex;
+        align-items: center;
+        &__link {
+          width: 14rem;
+          display: block;
+        }
+        .main-icon {
+          width: 100%;
+          vertical-align: bottom;
+          object-fit: cover;
+        }
+      }
+      .header-form-box {
+        width: 100%;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        form {
+          width: 100%;
+          display: flex;
+          margin-bottom: 0.5rem;
+          .search-fild {
+            width: calc(100% - 2.6rem);
+            height: 3.6rem;
+            color: #000000;
+          }
+          .search-btn {
+            width: 3.6rem;
+            background-color: #3CCACE;
+            padding: 0.8rem;
+            cursor: pointer;
+            &__box {
+              padding: 0;
+              margin: 0;
+              width: 100%;
+              text-align: center;
+              .search-icon {
+                width: 100%;
+                height: 100%;
+                color: #ffffff;
+                vertical-align: bottom;
+                object-fit: cover;
+              }
+            }
+          }
+        }
+      }
+    }
+    .header-nav {
+      font-size: 1.4rem;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      color: #000000;
+      padding: 0;
+      &__left {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        &__item {
+          line-height: 3.8rem;
+          .header-nav-link {
+            text-decoration: none;
+            color: #333;
+            line-height: 3.2rem;
+            padding-right: 3rem;
+          }
+        }
+      }
+      &__right {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        &__item {
+          line-height: 3.8rem;
+          .header-nav-link {
+            text-decoration: none;
+            color: #333;
+            line-height: 3.2rem;
+            padding-left: 3rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// .header-form-box
+//         = form_for('#', class: "header-search" ) do |f|
+//           = f.text_field class: 'search-fild'
+//           = f.submit class: 'search-btn' do
+//             .search-btn-box
+//               = image_tag 'material/icon-search 1.png', class:"search-icon"
