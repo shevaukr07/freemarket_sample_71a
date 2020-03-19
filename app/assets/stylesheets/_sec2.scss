@@ -1,0 +1,115 @@
+.flima-reason-contents {
+  width: 100%;
+  padding: 6rem 2rem;
+  text-align: center;
+  .heading {
+    font-size: 2.6rem;
+    padding:0 0 1.5rem 0;
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+  .heading::before {
+    content: '';
+    position: absolute;
+    background-color: #3CCACE;
+    width: 7rem;
+    height: 0.4rem;
+    bottom: 0;
+    left: 50%;
+    border-bottom: 1px solid #fff;
+    transform: translateX(-50%);
+  }
+  .reason-lists {
+    list-style: none;
+    width: 100%;
+    max-width: 1020px;
+    margin: 0 auto;
+    display: flex;
+    padding: 2rem 0;
+    justify-content: space-between;
+    .reason-list {
+      margin: 1.6px 5% 0 0;
+      &__top {
+        position: relative;
+        &__num {
+          position: absolute;
+          font-size: 3rem;
+          text-align: center;
+          color: #ffffff;
+          background-color: #3CCACE;
+          border-radius: 4%;
+          padding: 0.5rem 2rem;
+          top: 0;
+          left: 0;
+        }
+        .reason-image {
+          width: 100%;
+          vertical-align: bottom;
+        }
+      }
+      &__bottom {
+        &__title {
+          font-size: 2.4rem;
+          span {
+            color: #3CCACE;
+          }
+        }
+        &__sub-title {
+          font-size: 1.8rem;
+          text-align: left;
+          margin: 1.6rem 0 0 0;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+// section.flima-reason-contents
+//     %h2
+//       FURIMAが選ばれる３つの理由
+//     %ul.reason-lists
+//       %li.reason-list
+//         .reason-list__top
+//           = image_tag 'material/pict/pict-reason-01.jpg', class: 'reason-image' do
+//             %span.reason-image__num
+//               1
+//         .reason-list__bottom
+//           %h3.reason-bottom__title
+//             %span
+//               3分
+//             ですぐに出品
+//           %p.reason-bottom__sub-title
+//       %li.reason-list
+//         .reason-top
+//           = image_tag 'material/pict/pict-reason-02.jpg', class: 'reason-image' do
+//             %span.reason-image__num
+//               2
+//         .reason-bottom
+//           %h3.reason-bottom__title
+//             %span
+//               シンプル
+//             で使いやすい
+//           %p.reason-bottom__sub-title
+//             めんどくさい入力は必要なく、検索も購入もスムーズ！
+//       %li.reason-list
+//         .reason-list__top
+//           = image_tag 'material/pict/pict-reason-03.jpg', class: 'reason-image' do
+//             %span.reason-image__num
+//               3
+//         .reason-list__bottom
+//           %h3.reason-bottom__title
+//             手数料
+//             %span
+//               業界最安
+//           %p.reason-bottom__sub-title
+//             最大3%でお得に出品&購入！
