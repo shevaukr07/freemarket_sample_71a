@@ -58,7 +58,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|string||
-|text|string|null: false,unique:true|
+|name|string|null: false,unique:true|
 |ancestry|string|index: true|
 
 ### association
@@ -78,7 +78,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|string||
-|text|string|null: false|
+|name|string|null: false|
 
 ### association
 - has_many: items
@@ -87,7 +87,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|string||
-|text|string|null: false|
+|name|string|null: false|
 
 ### association
 - has_many: items
@@ -96,7 +96,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|string||
-|text|string|null: false|
+|name|string|null: false|
 
 ### association
 - has_many: items
@@ -105,7 +105,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|string||
-|text|string|null: false|
+|name|string|null: false|
 
 ### association
 - has_many: items
@@ -114,7 +114,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|string||
-|text|string|null: false|
+|name|string|null: false|
 
 ### association
 - has_many: items
@@ -132,7 +132,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|string||
-|text|string|null: false|
+|name|string|null: false|
 
 ### association
 - has_many: items
@@ -142,19 +142,33 @@ Things you may want to cover:
 |------|----|-------|
 |id|string||
 |nickname|string|null: false|
-|name|string|null: false|
-|mailaddress|string|null: false,unique:true|
+|first_name|string|null: false|
+|last_name|string|null: false|
+|mail_address|string|null: false,unique:true|
 |password|string|null: false,unique: true|
 |furigana|string|null: false|
 |birthday|string|null: false|
-|sendaddress|string|null: false|
-|sendname|string|null: false|
-|postalcode|string|null: false|
-|prefecture_id|integer|null: false|
-|city|string|null: false|
-|housenumber|string|null: false|
+|send_address|string|null: false|
+|send_name|string|null: false|
+
 
 ### association
 - has_many: items
 - has_many: cards
 - belongs_to_active_hash: prefecture
+- has_one: address
+
+## addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|postalcode|string|null: false|
+|prefecture|integer|null: false|
+|house_number|string|null: false|
+|building_name|string||
+|user|references|null: false,foreign_key: true|
+
+### association
+- belongs_to_active_hash: prefecture
+- belongs_to: user
+
+
