@@ -1,8 +1,26 @@
 
 %header.header
   .header__contents
-    = link_to do
-      = image_tag 'material/logo/logo.png', alt:'test-pictute'
+    .header__contents__logo
+      = link_to do
+        = image_tag 'material/logo/logo.png',size: '140x40', alt:'test-pictute'
+    %input.header__contents__input{:name => "search", :placeholder => "キーワードから探す", :type => "search", :value => ""}
+    .header__contents__btn-png
+      = link_to do
+        = image_tag 'material/icon/icon-search 1.png',size: '19x19', alt:'test-pictute'
+  .header__contents--two
+    %ul
+      .header__contents--two__left
+        %li
+          = link_to "カテゴリー",'/', class: "a-btn"
+        %li
+          = link_to "ブランド",'/', class: "a-btn"
+      .header__contents--two__right
+        %li
+          = link_to "ログイン",'/', class: "a-btn"
+        %li
+          = link_to "新規会員登録",'/', class: "b-btn"
+
       
 
 %main.main
