@@ -51,7 +51,7 @@ Things you may want to cover:
 - belongs_to :shipping_charge
 - belongs_to :shipping_mathod
 - belongs_to :shipping_day
-- has_many :item_images
+- has_many :item_images dependent: :destroy
 - belongs_to_active_hash: prefecture
 
 ## categoriesテーブル
@@ -154,9 +154,9 @@ Things you may want to cover:
 
 ### association
 - has_many: items
-- has_many: cards
+- has_many: cards dependent: :destroy
 - belongs_to_active_hash: prefecture
-- has_one: address
+- has_one: address dependent: :destroy
 
 ## addressテーブル
 |Column|Type|Options|
