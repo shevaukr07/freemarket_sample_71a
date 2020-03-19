@@ -123,7 +123,9 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|string||
-|user_id|integer|null: false|
+|user_id|string|null: false|
+|card_id|string|null: false|
+|customer_id|string|null: false|
 
 ### association
 - belongs_to: user
