@@ -63,4 +63,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'ancestry'
 gem 'active_hash'
-
+gem 'font-awesome-sass'
