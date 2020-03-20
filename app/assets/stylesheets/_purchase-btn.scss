@@ -1,0 +1,20 @@
+.purchase-btn {
+  width: 12rem;
+  background: #3CCACE;
+  text-align: center;
+  border-radius: 4%;
+  position: fixed;
+  bottom: 3.2rem;
+  right: 3.2rem;
+  padding: 1.5rem;
+  &__text {
+    font-size: 1.8rem;
+    display: block;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+  }
+  &__img {
+    width: 60%;
+  }
+}
