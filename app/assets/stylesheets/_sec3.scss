@@ -28,18 +28,3 @@
 
 
 
-// %section.flima_link
-//     .dl-pr
-//       %h2.dl-pr__title
-//         会員数日本一位
-//       %p.dl-pr__text
-//         FURIMAは、フリマアプリで最も人気。
-//         %br
-//         出品・購入回数も業界最多です！
-//         %br
-//         ほしかったあの商品に出会えるかもしれません。
-//         .dr-btns
-//           = link_to '/', class: "a-btn" do
-//             = image_tag "app_logo/app_store.png", alt: "AppStoreで入手", class: "btn-image"
-//           = link_to '/', class: "g-btn" do
-//             = image_tag "app_logo/google_play.png", alt: "Goole Playで入手", class: "btn-image"
