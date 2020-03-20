@@ -61,8 +61,28 @@ ActiveRecord::Schema.define(version: 20200320112036) do
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "name",                                 null: false
+    t.integer  "price",                                null: false
+    t.text     "introduce",              limit: 65535, null: false
+    t.integer  "user_id"
+    t.integer  "brand_id"
+    t.integer  "size_id"
+    t.integer  "commodity_condition_id"
+    t.integer  "shipping_charge_id"
+    t.integer  "shipping_mathod_id"
+    t.integer  "prefecture_id",                        null: false
+    t.integer  "shipping_day_id"
+    t.integer  "purchase"
+    t.integer  "buyer"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.index ["brand_id"], name: "index_items_on_brand_id", using: :btree
+    t.index ["commodity_condition_id"], name: "index_items_on_commodity_condition_id", using: :btree
+    t.index ["shipping_charge_id"], name: "index_items_on_shipping_charge_id", using: :btree
+    t.index ["shipping_day_id"], name: "index_items_on_shipping_day_id", using: :btree
+    t.index ["shipping_mathod_id"], name: "index_items_on_shipping_mathod_id", using: :btree
+    t.index ["size_id"], name: "index_items_on_size_id", using: :btree
+    t.index ["user_id"], name: "index_items_on_user_id", using: :btree
   end
 
   create_table "shipping_charges", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -109,4 +129,11 @@ ActiveRecord::Schema.define(version: 20200320112036) do
 
   add_foreign_key "cards", "users"
   add_foreign_key "item_images", "items"
+  add_foreign_key "items", "brands"
+  add_foreign_key "items", "commodity_conditions"
+  add_foreign_key "items", "shipping_charges"
+  add_foreign_key "items", "shipping_days"
+  add_foreign_key "items", "shipping_mathods"
+  add_foreign_key "items", "sizes"
+  add_foreign_key "items", "users"
 end
