@@ -1,4 +1,4 @@
-.flima-reason-contents {
+.flema-reason-contents {
   width: 100%;
   padding: 6rem 2rem;
   text-align: center;
@@ -74,42 +74,3 @@
 
 
 
-// section.flima-reason-contents
-//     %h2
-//       FURIMAが選ばれる３つの理由
-//     %ul.reason-lists
-//       %li.reason-list
-//         .reason-list__top
-//           = image_tag 'material/pict/pict-reason-01.jpg', class: 'reason-image' do
-//             %span.reason-image__num
-//               1
-//         .reason-list__bottom
-//           %h3.reason-bottom__title
-//             %span
-//               3分
-//             ですぐに出品
-//           %p.reason-bottom__sub-title
-//       %li.reason-list
-//         .reason-top
-//           = image_tag 'material/pict/pict-reason-02.jpg', class: 'reason-image' do
-//             %span.reason-image__num
-//               2
-//         .reason-bottom
-//           %h3.reason-bottom__title
-//             %span
-//               シンプル
-//             で使いやすい
-//           %p.reason-bottom__sub-title
-//             めんどくさい入力は必要なく、検索も購入もスムーズ！
-//       %li.reason-list
-//         .reason-list__top
-//           = image_tag 'material/pict/pict-reason-03.jpg', class: 'reason-image' do
-//             %span.reason-image__num
-//               3
-//         .reason-list__bottom
-//           %h3.reason-bottom__title
-//             手数料
-//             %span
-//               業界最安
-//           %p.reason-bottom__sub-title
-//             最大3%でお得に出品&購入！

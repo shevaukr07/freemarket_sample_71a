@@ -28,7 +28,7 @@
             新規会員登録
 
 %main.main
-  %section.flima-top
+  %section.flema-top
     .theme
       %h1.theme__title
         %br
@@ -42,7 +42,7 @@
           = image_tag "app_logo/app_store.png", alt: "AppStoreで入手", class: "btn-image"
         = link_to '/', class: "g-btn" do
           = image_tag "app_logo/google_play.png", alt: "Goole Playで入手", class: "btn-image"
-  %section.flima-reason-contents
+  %section.flema-reason-contents
     %h2.heading
       FURIMAが選ばれる３つの理由
     %ul.reason-lists
@@ -82,7 +82,7 @@
               業界最安
           %p.reason-list__bottom__sub-title
             最大3%でお得に出品&購入！
-  %section.flima_link
+  %section.flema_link
     .dl-pr
       %h2.dl-pr__title
         会員数日本一位
@@ -123,8 +123,95 @@
             様々な支払いに対応
           %p.fearures-item__text
             お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
-  %section.flima_pic_category
-  %section.flima_pic_brand
+  %section.flema_pic_category
+    %h1.category-head
+      ピックアップカテゴリー
+    .product-box
+      .category-title
+        新規投稿商品
+      .category-lists
+        .category-list
+          .category-list-img
+            = link_to image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png' 
+          .category-list-body
+          .category-name
+            product3
+          .details
+            .price
+              30000円
+              %i.fas.fa-star 0    
+            .tax
+              (税込)
+        .category-list
+          .category-list-img
+            = link_to image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png'
+          .category-list-body
+          .category-name
+            product2
+          .details
+            .price
+              20000円
+              %i.fas.fa-star 0    
+            .tax
+              (税込)
+        .category-list
+          .category-list-img
+            = link_to image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png'
+          .category-list-body
+          .category-name
+            product1
+          .details
+            .price
+              10000円 
+              %i.fas.fa-star 0             
+            .tax
+            (税込)
+
+
+  %section.flema_pic_brand
+    %h1.category-head
+      ピックアップブランド
+    .product-box
+      .category-title
+        アーカイバ
+      .category-lists
+        .category-list
+          .category-list-img
+            = link_to image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/13/a007.png'
+          .category-list-body
+          .category-name
+            product3
+          .details
+            .price
+              30000円
+              %i.fas.fa-star 0    
+            .tax
+              (税込)
+        .category-list
+          .category-list-img
+            = link_to image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png'
+          .category-list-body
+          .category-name
+            product2
+          .details
+            .price
+              20000円
+              %i.fas.fa-star 0    
+            .tax
+            (税込)
+        .category-list
+          .category-list-img
+            = link_to image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png'
+          .category-list-body
+          .category-name
+            product1
+          .details
+            .price
+              10000円
+              %i.fas.fa-star 0    
+            .tax
+            (税込)
+
 %aside.aside
   .aside__contents
     %h2.aside__contents__title
