@@ -1,0 +1,88 @@
+.features {
+  padding: 6rem 10rem;
+  &__contents {
+    margin: 0 auto;
+    .heading {
+      font-size: 2.6rem;
+      padding:0 0 1.5rem 0;
+      margin:0 0 2.5rem;
+      position: relative;
+      text-align: center;
+    }
+    .heading::before {
+      content: '';
+      position: absolute;
+      background-color: #3CCACE;
+      width: 7rem;
+      height: 0.4rem;
+      bottom: 0;
+      left: 50%;
+      border-bottom: 1px solid #fff;
+      transform: translateX(-50%);
+    }
+    .fearures-items {
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      .fearures-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: calc(1 / 4 * 100%);
+        text-align: center;
+        padding: 0 2rem;
+        &__image {
+          width: 70%;
+          margin: 0 auto;
+          line-height: 4.2rem;
+          padding: 0;
+          img {
+            width: 100%;
+            padding: 0;
+          }
+        }
+        &__team {
+          margin: 0 0 1rem;
+          font-size: 2rem;
+          font-weight: bold;
+        }
+        &__text {
+          font-size: 1.7rem;
+          text-align: left;
+          letter-spacing: 0.2rem;
+          margin-bottom: 4rem;
+        }
+      }
+    }
+  }
+}
+
+
+// %section.features
+//     .features__contents
+//       %h2.heading
+//         FURIMAの特徴
+//       .fearures-items
+//         .fearures-item
+//           %figre
+//             = image_tag 'material/icon/icon-01.png', class: "fearures-item__image"
+//           %h3.fearures-item__team
+//             簡単に売り買いできる
+//           %p.fearures-item__text
+//             スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+//         .fearures-item
+//           %figre
+//             = image_tag 'material/icon/icon-03.png', class: "fearures-item__image"
+//           %h3.fearures-item__team
+//             売上金は即日振込みに対応
+//           %p.fearures-item__text
+//             午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+//         .fearures-item
+//           %figre
+//             = image_tag 'material/icon/icon-04.png', class: "fearures-item__image"
+//           %h3.fearures-item__team
+//             様々な支払いに対応
+//           %p.fearures-item__text
+//             お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
