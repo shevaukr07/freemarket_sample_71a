@@ -1,0 +1,2 @@
+class CommodityCondition < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class ShippingMathod < ApplicationRecord
+end
