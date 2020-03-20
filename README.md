@@ -123,9 +123,12 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |id|string||
-|user_id|string|null: false|
-|card_id|string|null: false|
-|customer_id|string|null: false|
+|user_id|references|null: false, foreign_key: true|
+|card_company|string|null: false|
+|card_number|string|null: false|
+|card_year|integer|null: false|
+|card_month|integer|null: false|
+|card_pass|integer|null: false|
 
 ### association
 - belongs_to: user
@@ -144,15 +147,13 @@ Things you may want to cover:
 |------|----|-------|
 |id|string||
 |nickname|string|null: false|
+|email|string|null: false,unique:true|
+|password|string|null: false,unique: true|
 |first_name|string|null: false|
 |last_name|string|null: false|
-|mail_address|string|null: false,unique:true|
-|password|string|null: false,unique: true|
-|furigana|string|null: false|
-|birthday|string|null: false|
-|send_address|string|null: false|
-|send_name|string|null: false|
-
+|first_name_kana|string|null: false|
+|last_name_kana|string|null: false|
+|birthday|integer|null: false|
 
 ### association
 - has_many: items
@@ -163,14 +164,14 @@ Things you may want to cover:
 ## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|postalcode|string|null: false|
+|id|string|
+|user_id|references|null: false,foreign_key: true|
+|postal_code|varcar(7)|null: false|
 |prefecture|integer|null: false|
-|house_number|string|null: false|
-|building_name|string||
-|user|references|null: false,foreign_key: true|
+|city|string|null: false|
+|address|string|null: false|
+|apartment|string||
 
 ### association
 - belongs_to_active_hash: prefecture
 - belongs_to: user
-
-
