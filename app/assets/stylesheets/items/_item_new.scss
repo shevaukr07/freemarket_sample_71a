@@ -1,0 +1,70 @@
+.i-n-team {
+}
+.hissu {
+
+}
+.i-n-form-content {
+
+}
+
+.i-n {
+  margin: 0 auto;
+  width: 100%;
+  &__inner {
+    margin: 0 auto;
+    .i-n-image {
+      &__inner {
+      }
+    }
+    .i-n-names {
+      &__inner {
+        &__name {
+
+        }
+        &__text {
+
+        }
+      }
+    }
+    .i-n-categories {
+      &__inner {
+        &__category {
+
+        }
+        &__brand {
+
+        }
+        &__condition {
+
+        }
+      }
+    }
+    .i-n-delivery {
+      &__inner {
+        &__charge {
+
+        }
+        &__prefecture {
+
+        }
+        &__day {
+
+        }
+      }
+    }
+    .i-n-prices {
+      &__inner {
+        &__price {
+          .num-form {
+
+          }
+        }
+      }
+    }
+    .i-n-submit {
+      &__inner {
+
+      }
+    }
+  }
+}
