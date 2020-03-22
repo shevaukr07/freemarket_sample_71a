@@ -1,0 +1,27 @@
+%header.header
+  .header-contents
+    .header-contents__main
+      %h1.icon
+        = link_to '#', class: "icon__link" do
+          = image_tag 'material/logo/logo.png', alt:'main-icon', class: 'main-icon'
+      .header-form-box
+        %form
+          %input(type="text" class="search-fild")
+          %button.search-btn
+            .search-btn__box
+              = image_tag 'material/icon/icon-search 1.png', class:"search-icon"
+    %nav.header-nav
+      %ul.header-nav__left
+        %li.header-nav__left__item
+          = link_to "#", class: "header-nav-link" do
+            カテゴリー
+        %li.header-nav__left__item
+          = link_to "#", class: "header-nav-link" do
+            ブランド
+      %ul.header-nav__right
+        %li.header-nav__right__item
+          = link_to '#', class: "header-nav-link" do
+            ログイン
+        %li.header-nav__right__item
+          = link_to '#', class: "header-nav-link" do
+            新規会員登録

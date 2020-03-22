@@ -101,10 +101,3 @@
     }
   }
 }
-
-// .header-form-box
-//         = form_for('#', class: "header-search" ) do |f|
-//           = f.text_field class: 'search-fild'
-//           = f.submit class: 'search-btn' do
-//             .search-btn-box
-//               = image_tag 'material/icon-search 1.png', class:"search-icon"
