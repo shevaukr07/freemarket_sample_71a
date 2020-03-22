@@ -3,75 +3,103 @@
     = form_for [@item] do |f|
       .i-n-image
         .i-n-image__inner
-        %h3.i-n-team
-          出品画像
-        %p.hissu
-          必須
-        = f.label :/, class: 'form__box__image' do
-          = icon('fas', 'image', class: 'icon')
-          = f.file_field :image, class: 'hidden'
+          .teams
+            %h3.i-n-team
+              出品画像
+            %p.hissu
+              必須
+            .i-n-icon-contents
+              = f.label :image, class: 'i-n-icon-content' do
+                .file-box
+                  = icon('fas', 'image', class: 'icon')
+                  %p.file-message
+                    ドラッグアンドドロップ
+                    %br
+                    またはクリックしてアップロード
+                = f.file_field :image, class: 'hidden'
+            -# = f.fields_for :item_image do |image|
+            -#   .i-n-image-zone-clearfix
+            -#     #preview
+            -#     .image-areas
+            -#       = image.label :image, class: "dropzone-box", for: "upload-image" do
+            -#         .image_area
+            -#           = image.file_field :image, multiple: true, name: 'product_images[image][]', class: "upload-image", 'data-image': 0
+            -#         %p ここをクリックしてください
+            -#     #preview2
+            -#     .image-areas2
+            -#       = image.label :image, class: "dropzone-box", for: "upload-image" do
+            -#         %p ここをクリックしてください
       .i-n-names
         .i-n-names__inner
           .i-n-names__inner__name
-            %h3.i-n-team
-              商品名
-            %p.hissu
-              必須
+            .teams
+              %h3.i-n-team
+                商品名
+              %p.hissu
+                必須
             = f.text_field :name, placeholder: "40文字まで", class: 'i-n-form-content'
           .i-n-names__inner__text
-            %h3.i-n-team
-              商品の説明
-            %p.hissu
-              必須
-            = f.text_area :introduce, placeholder: "商品の説明", class: 'i-n-form-content'
+            .teams
+              %h3.i-n-team
+                商品の説明
+              %p.hissu
+                必須
+            = f.text_area :introduce,lows: "50",cols: "8", placeholder: "商品の説明", class: 'i-n-form-content text-area'
       .i-n-categories
         .i-n-categories__inner
           .i-n-categories__inner__category
-            %h3.i-n-team
-              カテゴリー
-            %p.hissu
-              必須
+            .teams
+              %h3.i-n-team
+                カテゴリー
+              %p.hissu
+                必須
             = f.select :/, [['メンズ', 1], ['レディース', 2], ['その他', 3]], { include_blank: true, selected: 1 }, class: 'i-n-form-content'
           .i-n-categories__inner__brand
-            %h3.i-n-team
-              ブランド
-            %p.not_hissu
-              任意
+            .teams
+              %h3.i-n-team
+                ブランド
+              %p.not_hissu
+                任意
             = f.select :/, [['シャネル', 1], ['エルメス', 2], ['グッチ', 3]], { include_blank: true, selected: 1 }, class: 'i-n-form-content'
           .i-n-categories__inner__condition
-            %h3.i-n-team
-              商品の状態
-            %p.not_hissu
-              任意
+            .teams
+              %h3.i-n-team
+                商品の状態
+              %p.not_hissu
+                任意
             = f.select :/, [['新品', 1], ['中古', 2]], { include_blank: true, selected: 1 }, class: 'i-n-form-content'
       .i-n-delivery
         .i-n-delivery__inner
           .i-n-delivery__inner__charge
-            %h3.i-n-team
-              配送料の負担
-            %p.hissu
-              必須
+            .teams
+              %h3.i-n-team
+                配送料の負担
+              %p.hissu
+                必須
             = f.select :/, [['出品者が負担', 1], ['購入者が負担', 2]], { include_blank: true, selected: 1 }, class: 'i-n-form-content'
           .i-n-delivery__inner__prefecture
-            %h3.i-n-team
-              発送元の地域
-            %p.hissu
-              必須
-            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, class: 'i-n-form-content'
+            .teams
+              %h3.i-n-team
+                発送元の地域
+              %p.hissu
+                必須
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name
           .i-n-delivery__inner__day
-            %h3.i-n-team
-              発送までの日数
-            %p.hissu
-              必須
+            .teams
+              %h3.i-n-team
+                発送までの日数
+              %p.hissu
+                必須
             = f.select :/, [['今日', 1], ['明日以降', 2]], { include_blank: true, selected: 1 }, class: 'i-n-form-content'
       .i-n-prices
         .i-n-prices__inner
           .i-n-prices__inner__price
-            %h3.i-n-team
-              販売価格
-            %p.hissu
-              必須
-            = f.number_field :price, class: 'i-n-form-content num-form'
+            .teams.teams-price
+              %h3.i-n-team
+                販売価格
+              %p.hissu
+                必須
+            = f.number_field :price, placeholder: "0", class: 'i-n-form-content num-form'
       .i-n-submit
         .i-n-submit__inner
-          = f.submit "出品する"
+          = f.submit "出品する", class: 'i-n-submit'

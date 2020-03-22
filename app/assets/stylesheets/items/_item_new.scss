@@ -1,69 +1,171 @@
 .i-n-team {
+  font-size: 1.4rem;
+  font-weight: bold;
+  display: inline-block;
+  margin: 2rem 0;
 }
-.hissu {
+.hissu, .not_hissu {
+  font-size: 1.2rem;
+  margin-left: 0.8rem;
+  display: inline-block;
+  background-color: red;
+  color: #ffffff;
+  padding: 0.1rem 0.3rem;
+}
 
+.not_hissu {
+  background-color: #888888;
 }
+
 .i-n-form-content {
+  width: 100%;
+  height: 4rem;
+  font-size: 1.6rem;
+  display: inline-block;
+}
 
+.i-n-form-content.text-area {
+  min-height: 8rem;
+}
+
+#item_prefecture_id {
+  height: 4rem;
+  font-size: 1.5rem;
+  display: inline;
+}
+
+.i-n-form-content.num-form {
+  max-width: 50%;
+}
+
+.teams.teams-price {
 }
 
 .i-n {
   margin: 0 auto;
   width: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  padding: 8rem;
   &__inner {
     margin: 0 auto;
-    .i-n-image {
-      &__inner {
-      }
-    }
-    .i-n-names {
-      &__inner {
-        &__name {
-
-        }
-        &__text {
-
-        }
-      }
-    }
-    .i-n-categories {
-      &__inner {
-        &__category {
-
-        }
-        &__brand {
-
-        }
-        &__condition {
-
-        }
-      }
-    }
-    .i-n-delivery {
-      &__inner {
-        &__charge {
-
-        }
-        &__prefecture {
-
-        }
-        &__day {
-
+    max-width: 70rem;
+    background-color: #ffffff;
+    form {
+      .i-n-image {
+        width: 100%;
+        padding: 4rem;
+        margin: 0 auto;
+        border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+        &__inner {
+          .i-n-icon-contents {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.1);
+            height: 20rem;
+            width: 100%;
+            border: dotted 1px rgba(0, 0, 0, 0.5);
+            .i-n-icon-content {
+              font-size: 6rem;
+              cursor: pointer;
+              .file-box {
+                height: 100%;
+                width: 100%;
+                align-items: center;
+                padding: 3rem;
+                .icon {
+                }
+                .file-message {
+                  font-size: 1.2rem;
+                }
+              }
+              .hidden {
+                display: none;
+              }
+            }
+          }
         }
       }
-    }
-    .i-n-prices {
-      &__inner {
-        &__price {
-          .num-form {
+      .i-n-names {
+        width: 100%;
+        padding: 4rem;
+        margin: 0 auto;
+        border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+        &__inner {
+          width: 100%;
+          &__name {
+
+          }
+          &__text {
 
           }
         }
       }
-    }
-    .i-n-submit {
-      &__inner {
+      .i-n-categories {
+        width: 100%;
+        padding: 4rem;
+        margin: 0 auto;
+        border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+        &__inner {
+          &__category {
 
+          }
+          &__brand {
+
+          }
+          &__condition {
+
+          }
+        }
+      }
+      .i-n-delivery {
+        width: 100%;
+        padding: 4rem;
+        margin: 0 auto;
+        border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+        &__inner {
+          &__charge {
+
+          }
+          &__prefecture {
+
+          }
+          &__day {
+
+          }
+        }
+      }
+      .i-n-prices {
+        width: 100%;
+        padding: 4rem;
+        margin: 0 auto;
+        border-bottom: solid 1px rgba(0, 0, 0, 0.2);
+        &__inner {
+          &__price {
+            display: flex;
+            justify-content: space-between;
+            .num-form {
+
+            }
+          }
+        }
+      }
+      .i-n-submit {
+        padding: 4rem;
+        &__inner {
+          width: 100%;
+          text-align: center;
+          .i-n-submit {
+            background-color: #ea352d;
+            color: #fff;
+            height: 1.5rem;
+            width: 60%;
+            display: inline-block;
+            line-height: 1rem;
+            font-size: 1.8rem;
+            text-align: center;
+            border-radius: 5%;
+            padding: 3rem;
+          }
+        }
       }
     }
   }

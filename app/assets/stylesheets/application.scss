@@ -16,11 +16,11 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
  @import "normalize";
- @import "sec1";
- @import "sec2";
- @import "sec3";
+ @import "moduls/sec1";
+ @import "moduls/sec2";
+ @import "moduls/sec3";
  @import "header";
- @import "aside";
+ @import "moduls/aside";
  @import "footer";
- @import "purchase-btn";
- @import "items/item_new"
+ @import "moduls/purchase-btn";
+ @import "items/item_new";
