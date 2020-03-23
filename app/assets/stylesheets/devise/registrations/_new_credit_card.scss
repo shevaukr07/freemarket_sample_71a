@@ -1,0 +1,34 @@
+.form-content--half {
+  width: 20%;
+  height: 2.5rem;
+  font-size: 1.6rem;
+  display: inline-block;
+}
+
+.form-group__year-and-month {
+  display: inline-block;
+  font-size: 1.6rem;
+}
+
+#_card_company {
+  width: 20%;
+  height: 2.5rem;
+  font-size: 1.6rem;
+}
+
+#_card_pass {
+  width: 10rem;
+}
+
+.card-logo-lists {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  &__list {
+    padding-right: 1rem;
+    .card-icon {
+      width: 3rem;
+      height: 2rem;
+    }
+  }
+}
