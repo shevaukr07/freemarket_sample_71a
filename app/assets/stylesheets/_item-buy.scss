@@ -1,0 +1,87 @@
+.buypage{
+  text-align: center;
+  &__header{
+    height:128px;
+    line-height: 150px;
+  }
+  &__main{
+    width: 700px;
+    background-color: white;
+    margin: 0 auto;
+    color: rgb(34, 34, 34);
+    
+    &__title{
+      border-bottom: solid 1px rgb(238, 238, 238);
+      font-size: 18px;
+      height: 50px;
+      line-height: 50px;
+
+    }
+    &__item{
+      // display: flex;
+      // justify-content: center;
+      height: 1200px;
+      .flex{
+        display: flex;
+        font-weight: bold;
+        justify-content: center;
+        border-bottom: solid 1px rgb(238, 238, 238);
+        height: 129px;
+        padding-top: 34px;
+      }
+      &__texts{
+        .flex2{
+          display: flex;
+          font-weight: bold;
+          justify-content: center;
+        }
+        &__title{
+          text-align: left;
+          padding-bottom: 8px;
+        }
+        &__image{
+          height: 80px;
+        }
+        &__price{
+          
+        }
+        &__send-fee{
+        }
+      }
+      &__form{
+        &__price{
+          padding: 16px;
+          border-bottom: solid 1px rgb(238, 238, 238);
+          .upper{
+            display: flex;
+            justify-content: center;
+            
+          }
+          &__label{
+            font-size:18px;
+            font-weight: bold;
+          }
+          &__num{
+            font-size:14px;
+          }
+          &__point{
+            color: #888888;
+          }
+        }
+        &__pay-way{
+          padding: 16px;
+          border-bottom: solid 1px rgb(238, 238, 238);
+        }
+        &__buy-btn{
+          background-color: #EA352D;
+          height: 50px;
+          color: white;
+          font-weight: bold;
+          width: 343px;
+          line-height: 50px;
+        }
+      }
+    }
+  }
+  
+}

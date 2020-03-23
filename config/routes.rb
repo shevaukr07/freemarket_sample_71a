@@ -12,5 +12,5 @@ Rails.application.routes.draw do
   end
   root 'tests#index'
   resources :users, only: [:show]
-  resources :item
+  resources :items
 end
