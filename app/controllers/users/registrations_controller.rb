@@ -31,22 +31,31 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     @user.build_address(@address.attributes)
     session["address"] = @address.attributes
-    @creditcard = @user.build_creditcard
-    render :new_credit_card
+    @creditcard = @user.build_card
+    render :new_creditcard
   end
 
   def create_creditcard
     @user = User.new(session["devise.regist_data"]["user"])
     @address = Address.new(session["address"])
-    @creditcard = Creditcard.new(creditcard_params)
+    @creditcard = Card.new(creditcard_params)
     unless @creditcard.valid?
       flash.now[:alert] = @creditcard.errors.full_messages
-      render :new_credit_card and return
+      render :new_creditcard and return
     end
     @user.build_address(@address.attributes)
-    @user.build_creditcard(@creditcard.attributes)
+    @user.build_card(@creditcard.attributes)
     @user.save
     sign_in(:user, @user)
+    redirect_to root_path
+  end
+
+  def address_params
+    params.require(:address).permit(:address,:postal_code, :prefecture, :city, :apartment)
+  end
+
+  def creditcard_params
+    params.require(:card).permit(:card_company,:card_number, :card_year, :card_month, :card_pass)
   end
 
 end
