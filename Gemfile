@@ -70,6 +70,9 @@ gem 'fog-aws'
 gem 'carrierwave'
 gem 'mini_magick'
 gem 'ancestry'
+
 gem 'payjp'
 gem 'jquery-rails'
 gem 'dotenv-rails'
+
+gem 'pry-rails'

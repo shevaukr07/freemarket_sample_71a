@@ -11,10 +11,11 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'addresses', to: 'users/registrations#new_address'
     post 'addresses', to: 'users/registrations#create_address'
-    get 'creditcards', to: 'users/registrations#new_credit_card'
-    post 'creditcards', to: 'users/registrations#create_credit_card'
+    get 'creditcards', to: 'users/registrations#new_creditcard'
+    post 'creditcards', to: 'users/registrations#create_creditcard'
   end
   root 'tests#index'
+  resources :tests, only: [:index, :new]
   resources :users, only: [:show]
   resources :items
 end

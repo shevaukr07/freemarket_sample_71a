@@ -3,7 +3,7 @@
     %h2.sign-up-main__container__title
       住所入力
     .sign-up-main__container__forms
-      =form_for(:/, url: addresses_path, method: :post) do |f|
+      =form_for(@address, url: addresses_path, method: :post) do |f|
         -# =render "devise/shared/error_messages", resource: @address
         .form-group
           .teams
@@ -18,7 +18,7 @@
               都道府県
             %p.hissu
               必須
-          = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+          = f.collection_select :prefecture, Prefecture.all, :id, :name
         .form-group
           .teams
             %h3.i-n-team
