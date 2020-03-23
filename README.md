@@ -124,11 +124,8 @@ Things you may want to cover:
 |------|----|-------|
 |id|string||
 |user_id|references|null: false, foreign_key: true|
-|card_company|string|null: false|
-|card_number|string|null: false|
-|card_year|integer|null: false|
-|card_month|integer|null: false|
-|card_pass|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 
 ### association
 - belongs_to: user
