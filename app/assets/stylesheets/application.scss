@@ -16,6 +16,7 @@
  @import "font-awesome-sprockets";
  @import "font-awesome";
  @import "normalize";
+
  @import "top_page/sec1";
  @import "top_page/sec2";
  @import "top_page/sec3";
@@ -24,6 +25,9 @@
  @import "moduls/footer";
  @import "top_page/purchase-btn";
  @import "items/item_new";
+ @import "items/item_buy";
+ @import "items/items";
  @import "devise/registrations/new_address";
  @import "devise/registrations/new_credit_card";
  @import "users/show";
+
