@@ -3,7 +3,7 @@
     %h2.sign-up-main__container__title
       クレジットカード登録
     .sign-up-main__container__forms
-      =form_for(:/, url: creditcards_path, method: :post) do |f|
+      =form_for(@creditcard, url: creditcards_path, method: :post) do |f|
         -# =render "devise/shared/error_messages", resource: @address
         .form-group
           .teams
@@ -52,4 +52,4 @@
             %br
           = f.text_field :card_pass, placeholder: "3~4桁", class: "form-content secrity-code"
         .form-group.submit-content
-          = f.submit '次へ', class: "form-submit", url: "creditcard_path"
+          = f.submit "登録する", class: "form-submit", url: "creditcards_path", method: :post
