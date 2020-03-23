@@ -1,0 +1,81 @@
+.u-s {
+    margin: 0 auto;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.15);
+    padding: 8rem;
+  &__inner {
+    max-width: 70%;
+    margin: 0 auto;
+    display: flex;
+    .u-s-side {
+      width: 28rem;
+      margin: 0 4rem 0 0;
+      &__nav {
+        padding: 0;
+        &__lists {
+          list-style: none;
+          font-size: 1.6rem;
+          padding: 0;
+          text-align: center;
+          margin: 0;
+          &__list {
+            border-top: 1px solid #eee;
+            background-color: #ffffff;
+            padding: 2rem 4rem;
+            .u-s-side-list-link {
+              text-decoration: none;
+              color: #000000;
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    .u-s-main {
+      width: 100%;
+      background-color: #ffffff;
+      padding: 4rem;
+      text-align: center;
+      border-radius: 1%;
+      .u-s-images {
+        padding: 4rem;
+        background-image: image-url('moduls/tech-camp.jpg');
+        background-size: cover;
+        background-position: top center;
+        background-repeat: no-repeat;
+        border-radius: 1%;
+        &__contents {
+          &__image {
+            width: 25rem;
+            height: auto;
+            margin: 0 auto;
+            .profile-image {
+              width: 100%;
+              border-radius: 50%;
+            }
+          }
+          &__names {
+            padding: 4rem;
+            &__name {
+              font-size: 4rem;
+              letter-spacing: 0.2rem;
+              margin: 0;
+            }
+          }
+        }
+      }
+      .u-s-texts {
+        &__contents {
+          padding: 2rem;
+          &__text {
+            text-align: left;
+            font-size: 2rem;
+          }
+        }
+      }
+      .u-s-items {
+
+      }
+    }
+  }
+}
