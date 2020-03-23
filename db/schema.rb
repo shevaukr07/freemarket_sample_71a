@@ -33,13 +33,13 @@ ActiveRecord::Schema.define(version: 20200323094327) do
 
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",      null: false
-    t.string   "card_company", null: false
-    t.string   "card_number",  null: false
-    t.integer  "card_year",    null: false
-    t.integer  "card_month",   null: false
-    t.integer  "card_pass",    null: false
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "card_pass"
+    t.integer  "card_month"
+    t.integer  "card_year"
+    t.string   "card_number"
+    t.string   "card_company"
     t.index ["user_id"], name: "index_cards_on_user_id", using: :btree
   end
 
