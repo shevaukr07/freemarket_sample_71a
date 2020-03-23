@@ -1,0 +1,60 @@
+.buypage
+  .buypage__header
+    = link_to '/' , class: '' do
+      = image_tag "material/logo/logo.png", alt: "logo画像", class: "",size: "185x49"
+  .buypage__main
+    .buypage__main__title
+      購入内容の確認
+    %br
+    .buypage__main__item
+      .flex
+        .buypage__main__item__image
+          = link_to '/' , class: 'another-image' do
+            = image_tag "item-img/raica1.jpg", alt: "商品画像", class: "",size: "80x60"
+        .buypage__main__item__texts
+          .buypage__main__item__texts__title
+            商品タイトル
+          .flex2
+            .buypage__main__item__texts__price
+              ¥4,980
+            .buypage__main__item__texts__send-fee
+              （税込）送料込み
+      .buypage__main__item__form
+        .buypage__main__item__form__price
+          .upper
+            .buypage__main__item__form__price__label
+              支払い金額
+            .buypage__main__item__form__price__num
+              ¥1,200
+
+          .bottom
+            .buypage__main__item__form__price__point
+              ポイントを使用 (所持ポイント: P0)支払い方法
+        %br
+        .buypage__main__item__form__pay-way
+          .buypage__main__item__form__pay-way__name
+            支払い方法
+          .buypage__main__item__form__pay-way__credit
+            クレジットカード
+          .buypage__main__item__form__pay-way__logo
+            = image_tag "card/visa.svg", alt: "カードロゴ画像", class: "",size: "49x15"
+        .buypage__main__item__form__delivery
+          .buypage__main__item__form__delivery__label
+            配送先
+          .buypage__main__item__form__delivery__address
+            %p 〒190-xxxx
+            %p 東京都xxxx-xxx-
+            %p テック 太郎
+        %br
+        .buypage__main__item__form__buy-btn
+          購入する
+    
+
+  .buy-page__footer
+    .buy-page__footer__top
+    .buy-page__footer__middle
+      -# = link_to ,testu,'/', class: 'another-image 
+      %a
+      %a
+      .buy-page__footer__middle--image
+    .buy-page__footer__bottom
