@@ -5,38 +5,7 @@
     .sign-up-main__container__forms
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = render "devise/shared/error_messages", resource: resource
-        .form
-          .form__name
-            .form__name__box
-              .left
-                %h3.i-n-team
-                  性    
-                %p.hissu
-                  必須
-              = f.text_field :nickname, autofocus: true, class: 'form-content'
-            .form__name__box
-              .right
-                %h3.i-n-team
-                  名
-                %p.hissu
-                  必須
-              = f.text_field :nickname, autofocus: true, class: 'form-content'
-        .form
-          .form__name
-            .form__name__box
-              .left
-                %h3.i-n-team
-                  せい
-                %p.hissu
-                  必須
-              = f.text_field :nickname, autofocus: true, class: 'form-content'
-            .form__name__box
-              .right
-                %h3.i-n-team
-                  めい
-                %p.hissu
-                  必須
-              = f.text_field :nickname, autofocus: true, class: 'form-content'
+        
         .form-group
           .teams
             %h3.i-n-team
@@ -70,11 +39,8 @@
               必須
             = f.password_field :password, autocomplete: "current-password", class: 'form-content'
         - if devise_mapping.rememberable?
-          .form-group__content
-            .form-group.submit-content
-              = f.submit "次へ", class: 'form-submit'
-              
-  .sign-up-main  
+          .form-group__content              
+   
     .sign-up-main-check
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         .form-group
@@ -91,7 +57,7 @@
 
         .form-group
           .form-name-kana
-            = f.label :"お名前(カナ)(全角)"
+            = f.label :"お名前(かな)(全角)"
             %span.form-group__require 
             .hissu 必須
           = f.text_field :last_name,class:'form-group__input--half'
