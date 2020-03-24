@@ -1,0 +1,23 @@
+.sign-up-main
+  .sign-up-main__container
+    %h2.sign-up-main__container__title
+      ログイン
+    .sign-up-main__container__forms
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .form-group
+          .teams
+            %h3.i-n-team
+              メールアドレス
+            %p.hissu
+              必須
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-content'
+        .form-group
+          = f.password_field :password, autocomplete: "current-password", class: 'form-content'
+        - if devise_mapping.rememberable?
+          .form-group__content
+            .form-group__content__box
+              = f.check_box :remember_me, class: 'form-content__radio'
+              = f.label :remember_me, 'ログイン情報を記憶', class: 'form-content__remember'
+        .form-group.submit-content
+          = f.submit "ログイン", class: 'form-submit'
+          = render "devise/shared/links"

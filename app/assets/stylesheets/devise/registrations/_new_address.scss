@@ -1,5 +1,31 @@
 .form-group.submit-content {
   text-align: center;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  a.new-user{
+    background-color: #0099e8;
+    color:#fff;
+    height:1.5rem;
+    width: 60%;
+    display:inline-block;
+    line-height: 1rem;
+    font-size:1.8rem;
+    text-align: center;
+    border-radius: 5%;
+    padding:3rem;
+    text-decoration: none;
+    margin-top:3rem;
+  }
+  a.new-password{
+    text-decoration: none;
+    color:#0099e8;
+    font-size: 1.5rem;
+    margin-right: auto;
+  }
+  .form-submit{
+    cursor: pointer;
+  }
 }
 
 .sign-up-main {
@@ -11,6 +37,14 @@
     margin: 0 auto;
     background: #ffffff;
     padding: 4rem 0;
+    .form{
+      &__name{
+        display: flex;
+        &__box{
+          margin-right:10rem;
+        }  
+      }
+    }
     &__title {
       text-align: center;
       padding: 2rem;
@@ -18,9 +52,33 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     }
     &__forms {
-      .form-group {
+      padding:0 10rem;
+      .m-group{
         padding: 1.5rem 4rem;
+        &__name{
+          display: flex;
+        }
+        &__content{
+          padding: 1.5rem 4rem;
+          &__box{
+            display:flex;
+            align-items: center;
+
+            .form-content__radio{
+              transform: scale(1.7);
+              cursor: pointer;
+            }
+            .form-content__remember{
+              font-size: 1.7rem;
+              display: inline-block;
+              margin-left:1.0rem;
+            }
+          }
+        }
       }
     }
   }
+}
+.form-group.submit-content{
+  padding-top:15rem;
 }

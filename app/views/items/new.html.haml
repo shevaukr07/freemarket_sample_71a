@@ -17,18 +17,6 @@
                     %br
                     またはクリックしてアップロード
                 = f.file_field :image, class: 'hidden'
-            -# = f.fields_for :item_image do |image|
-            -#   .i-n-image-zone-clearfix
-            -#     #preview
-            -#     .image-areas
-            -#       = image.label :image, class: "dropzone-box", for: "upload-image" do
-            -#         .image_area
-            -#           = image.file_field :image, multiple: true, name: 'product_images[image][]', class: "upload-image", 'data-image': 0
-            -#         %p ここをクリックしてください
-            -#     #preview2
-            -#     .image-areas2
-            -#       = image.label :image, class: "dropzone-box", for: "upload-image" do
-            -#         %p ここをクリックしてください
       .i-n-names
         .i-n-names__inner
           .i-n-names__inner__name
