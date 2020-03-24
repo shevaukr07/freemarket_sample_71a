@@ -37,6 +37,14 @@
     margin: 0 auto;
     background: #ffffff;
     padding: 4rem 0;
+    .form{
+      &__name{
+        display: flex;
+        &__box{
+          margin-right:10rem;
+        }  
+      }
+    }
     &__title {
       text-align: center;
       padding: 2rem;
@@ -44,13 +52,18 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     }
     &__forms {
-      .form-group {
+      padding:0 10rem;
+      .m-group{
         padding: 1.5rem 4rem;
+        &__name{
+          display: flex;
+        }
         &__content{
           padding: 1.5rem 4rem;
           &__box{
             display:flex;
             align-items: center;
+
             .form-content__radio{
               transform: scale(1.7);
               cursor: pointer;
@@ -65,4 +78,7 @@
       }
     }
   }
+}
+.form-group.submit-content{
+  padding-top:15rem;
 }

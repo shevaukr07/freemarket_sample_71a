@@ -1,0 +1,75 @@
+.sign-up-main
+  .sign-up-main__container
+    %h2.sign-up-main__container__title
+      新規会員登録
+    .sign-up-main__container__forms
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        = render "devise/shared/error_messages", resource: resource
+        .form
+          .form__name
+            .form__name__box
+              .left
+                %h3.i-n-team
+                  性    
+                %p.hissu
+                  必須
+              = f.text_field :nickname, autofocus: true, class: 'form-content'
+            .form__name__box
+              .right
+                %h3.i-n-team
+                  名
+                %p.hissu
+                  必須
+              = f.text_field :nickname, autofocus: true, class: 'form-content'
+        .form
+          .form__name
+            .form__name__box
+              .left
+                %h3.i-n-team
+                  せい
+                %p.hissu
+                  必須
+              = f.text_field :nickname, autofocus: true, class: 'form-content'
+            .form__name__box
+              .right
+                %h3.i-n-team
+                  めい
+                %p.hissu
+                  必須
+              = f.text_field :nickname, autofocus: true, class: 'form-content'
+        .form-group
+          .teams
+            %h3.i-n-team
+              ニックネーム
+            %p.hissu
+              必須
+          = f.text_field :nickname, autofocus: true, class: 'form-content'
+        .form-group
+          .teams
+            %h3.i-n-team
+              メールアドレス
+            %p.hissu
+              必須
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-content'
+        .form-group
+          .teams
+            %h3.i-n-team
+              パスワード
+            %p.hissu
+              必須
+            - if @minimum_password_length
+              %em
+                英数7文字以上
+            %br/
+            = f.password_field :password, autocomplete: "new-password", class: 'form-content'
+        .form-group
+          .teams
+            %h3.i-n-team
+              パスワード(確認用)
+            %p.hissu
+              必須
+            = f.password_field :password, autocomplete: "current-password", class: 'form-content'
+        - if devise_mapping.rememberable?
+          .form-group__content
+            .form-group.submit-content
+              = f.submit "次へ", class: 'form-submit'
