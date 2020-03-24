@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  get 'card/new'
-
-  get 'card/show'
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   devise_for :users, controllers: {
@@ -17,5 +13,14 @@ Rails.application.routes.draw do
   root 'tests#index'
   resources :tests, only: [:index, :new]
   resources :users, only: [:show]
-  resources :items
+  resources :items do
+    collection do
+      post 'purchase'
+    end
+  end
+  resources :cards
+  
+  # get 'items/purchase' :to 'items#purchase'
+
+    
 end

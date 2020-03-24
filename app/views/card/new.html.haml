@@ -1,2 +1,6 @@
 %h1 Card#new
 %p Find me in app/views/card/new.html.haml
+
+= form_for purchase_items_path do
+  :plain
+    <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_49f768b08fbd8f8c54252cf3"></script>
