@@ -1,4 +1,3 @@
-
 .sign-up-main
   .sign-up-main__container
     %h2.sign-up-main__container__title
@@ -74,3 +73,38 @@
           .form-group__content
             .form-group.submit-content
               = f.submit "次へ", class: 'form-submit'
+              
+  .sign-up-main  
+    .sign-up-main-check
+      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+        .form-group
+          %label.form-group-text-title 本人確認
+          %p.form-group__info 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+
+        .form-group
+          .form-name
+            = f.label :"お名前(全角)"
+            %span.form-group__require 
+            .hissu 必須
+          = f.text_field :last_name,class:'form-group__input--half'
+          = f.text_field :first_name,class:'form-group__input--half'
+
+        .form-group
+          .form-name-kana
+            = f.label :"お名前(カナ)(全角)"
+            %span.form-group__require 
+            .hissu 必須
+          = f.text_field :last_name,class:'form-group__input--half'
+          = f.text_field :first_name,class:'form-group__input--half'
+
+        .form-group
+          .form-barthday
+            = f.label :"生年月日"
+            %span.form-group__require 
+            .hissu 必須
+          != sprintf(f.date_select(:birthday, prefix:'birthday',with_css_classes:'XXXXX', prompt:"--",use_month_numbers:true, start_year:Time.now.year, end_year:1900, date_separator:'%s'),'年','月')+'日'
+
+        .actions
+          = f.submit '次へ', class: 'form-submit'
+ 
+              
