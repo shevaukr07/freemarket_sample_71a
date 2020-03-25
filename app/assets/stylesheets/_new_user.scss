@@ -1,0 +1,77 @@
+  .sign-up-main-check{
+    margin: 0 auto;
+    max-width: 70rem;
+    background-color: white;
+    padding: 8rem;
+    height: 100vh;
+  }
+
+    .form-group{
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    .form-name{
+      text-align: left;
+      font-size: 2rem;
+      margin: 4rem 0;   
+    }
+
+    .form-name-kana{
+      text-align: left;
+      font-size: 2rem;
+      margin: 4rem 0;   
+    }
+
+    .form-barthday{
+      text-align: left;
+      font-size: 2rem;
+      margin: 4rem 0;  
+    }
+
+    #user_last_name.form-group__input--half{
+      border-width: thin;
+      height: 4rem;
+      width: 25rem;
+      margin-right: 1rem;
+    }
+
+    #user_first_name.form-group__input--half{
+      border-width: thin;
+      height: 4rem;
+      width: 25rem;
+      margin-left: 1rem;
+    }
+
+    #birthday_birthday_1i.year{
+      height: 3rem;
+      width: 15rem;
+    }
+
+    #birthday_birthday_2i.month{
+      height: 3rem;
+      width: 10rem;
+    }
+
+    #birthday_birthday_3i.day{
+      height: 3rem;
+      width: 10rem;
+    }
+    
+
+    .form-group-text-title{
+      font-size: 2rem;
+    }
+
+    .form-group__info{
+      text-align: left;
+      word-break: keep-all;
+      color: #474040c4;
+      font-size: 1.4rem;
+    }
+
+    .actions{
+      text-align: center;
+      margin-top: 5rem;
+    }
+    
