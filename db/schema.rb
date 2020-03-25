@@ -14,23 +14,23 @@ ActiveRecord::Schema.define(version: 20200320112036) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id"
-    t.string   "postal_code", limit: 7, null: false
-    t.integer  "prefecture",            null: false
-    t.string   "city",                  null: false
-    t.string   "address",               null: false
+    t.string   "postal_code",   limit: 7, null: false
+    t.integer  "prefecture_id",           null: false
+    t.string   "city",                    null: false
+    t.string   "address",                 null: false
     t.string   "apartment"
     t.integer  "phone_num"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
 
   create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",     null: false
+    t.string   "card_id",     null: false
+    t.string   "customer_id", null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "customer_id"
-    t.string   "card_id"
     t.index ["user_id"], name: "index_cards_on_user_id", using: :btree
   end
 
@@ -51,21 +51,21 @@ ActiveRecord::Schema.define(version: 20200320112036) do
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                              null: false
-    t.integer  "price",                             null: false
-    t.text     "introduce",           limit: 65535, null: false
-    t.integer  "brand"
-    t.integer  "size"
-    t.integer  "commodity_condition"
-    t.integer  "shipping_charge"
-    t.integer  "shipping_method"
-    t.integer  "prefecture"
-    t.integer  "shipping_day"
-    t.integer  "purchase"
+    t.string   "name",                                 null: false
+    t.integer  "price",                                null: false
+    t.text     "introduce",              limit: 65535, null: false
+    t.integer  "brand_id"
+    t.integer  "size_id"
+    t.integer  "commodity_condition_id"
+    t.integer  "shipping_charge_id"
+    t.integer  "shipping_method_id"
+    t.integer  "prefecture_id"
+    t.integer  "shipping_day_id"
+    t.integer  "purchase_id"
     t.integer  "seller_id"
     t.integer  "buyer_id"
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
     t.index ["buyer_id"], name: "index_items_on_buyer_id", using: :btree
     t.index ["seller_id"], name: "index_items_on_seller_id", using: :btree
   end
