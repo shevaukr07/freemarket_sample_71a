@@ -45,14 +45,19 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belongs_to :category
-- belongs_to :size
-- belongs_to :commodoty_condition
+<!-- - belongs_to :size -->
+<!-- - belongs_to :commodoty_condition -->
 - belongs_to :brand
-- belongs_to :shipping_charge
-- belongs_to :shipping_mathod
-- belongs_to :shipping_day
+<!-- - belongs_to :shipping_charge -->
+<!-- - belongs_to :shipping_mathod -->
+<!-- - belongs_to :shipping_day -->
 - has_many :item_images dependent: :destroy
 - belongs_to_active_hash: prefecture
+- belongs_to_active_hash: commodity_condition
+- belongs_to_active_hash: shipping_method
+- belongs_to_active_hash :shipping_day
+- belongs_to_active_hash :shipping_charge
+- belongs_to_active_hash :size
 
 ## categoriesテーブル
 |Column|Type|Options|
@@ -74,23 +79,23 @@ Things you may want to cover:
 ### association
 - belongs_to: item
 
-## sizesテーブル
+<!-- ## sizesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|string||
 |name|string|null: false|
 
 ### association
-- has_many: items
+- has_many: items -->
 
-## commodity_conditionsテーブル
+<!-- ## commodity_conditionsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|string||
 |name|string|null: false|
 
 ### association
-- has_many: items
+- has_many: items -->
 
 ## brandsテーブル
 |Column|Type|Options|
@@ -101,23 +106,23 @@ Things you may want to cover:
 ### association
 - has_many: items
 
-## shipping_chargesテーブル
+<!-- ## shipping_chargesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|string||
 |name|string|null: false|
 
 ### association
-- has_many: items
+- has_many: items -->
 
-## shipping_daysテーブル
+<!-- ## shipping_daysテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|string||
 |name|string|null: false|
 
 ### association
-- has_many: items
+- has_many: items -->
 
 ## cardsテーブル
 |Column|Type|Options|
@@ -130,14 +135,14 @@ Things you may want to cover:
 ### association
 - belongs_to: user
 
-## shipping_mathodsテーブル
+<!-- ## shipping_mathodsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |id|string||
 |name|string|null: false|
 
 ### association
-- has_many: items
+- has_many: items -->
 
 ## usersテーブル
 |Column|Type|Options|
