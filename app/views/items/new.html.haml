@@ -52,14 +52,14 @@
                 ブランド
               %p.not_hissu
                 任意
-            = f.select :brand, {シャネル: 1, エルメス: 2}, { include_blank: true, selected: 1 }, class: 'form-content'
+            = f.select :brand_id, {シャネル: 1, エルメス: 2}, { include_blank: true, selected: 1 }, class: 'form-content'
           .i-n-categories__inner__condition
             .teams
               %h3.i-n-team
                 商品の状態
               %p.not_hissu
                 任意
-            = f.select :commodity_condition, [['新品', 1], ['中古', 2]], { include_blank: true, selected: 1 }, class: 'form-content'
+            = f.collection_select :commodity_condition_id, CommodityCondition.all, :id, :value, class: 'form-content'
       .i-n-delivery
         .i-n-delivery__inner
           .i-n-delivery__inner__method
@@ -68,28 +68,28 @@
                 配送
               %p.hissu
                 必須
-            = f.select :shipping_method, [['クロネコ', 1], ['手渡し', 2]], { include_blank: true, selected: 1 }, class: 'form-content'
+            = f.collection_select :shipping_method_id, ShippingMethod.all, :id, :value, class: 'form-content'
           .i-n-delivery__inner__charge
             .teams
               %h3.i-n-team
                 配送料の負担
               %p.hissu
                 必須
-            = f.select :shipping_charge, [['出品者が負担', 1], ['購入者が負担', 2]], { include_blank: true, selected: 1 }, class: 'form-content'
+            = f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :value, class: 'form-content'
           .i-n-delivery__inner__prefecture
             .teams
               %h3.i-n-team
                 発送元の地域
               %p.hissu
                 必須
-            = f.collection_select :prefecture, Prefecture.all, :id, :name
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, class: 'form-content'
           .i-n-delivery__inner__day
             .teams
               %h3.i-n-team
                 発送までの日数
               %p.hissu
                 必須
-            = f.select :shipping_day, [['今日', 1], ['明日以降', 2]], { include_blank: true, selected: 1 }, class: 'form-content'
+            = f.collection_select :shipping_day_id, ShippingDay.all, :id, :value, class: 'form-content'
       .i-n-prices
         .i-n-prices__inner
           .i-n-prices__inner__price
