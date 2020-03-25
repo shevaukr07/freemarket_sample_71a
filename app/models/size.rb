@@ -1,4 +1,4 @@
-class Sizes < ActiveHash::Base
+class Size < ActiveHash::Base
   self.data = [
     {id: 1, value: 'XS以下'},
     {id: 2, value: 'S'},
@@ -8,5 +8,5 @@ class Sizes < ActiveHash::Base
     {id: 6, value: '3L'},
     {id: 7, value: '4L以上'},
     {id: 8, value: 'その他'}
-  ]  
+  ]
 end

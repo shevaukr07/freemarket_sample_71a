@@ -82,7 +82,7 @@
                 発送元の地域
               %p.hissu
                 必須
-            = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+            = f.collection_select :prefecture, Prefecture.all, :id, :name
           .i-n-delivery__inner__day
             .teams
               %h3.i-n-team
