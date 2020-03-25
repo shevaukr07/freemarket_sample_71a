@@ -1,8 +1,7 @@
 class Item < ApplicationRecord
 extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :user
-  belongs_to :category
-  belongs_to :brand
+  belongs_to :buyer, class_name: 'User', :foreign_key => 'buyer_id'
+  belongs_to :seller, class_name: 'User', :foreign_key => 'seller_id'
   has_many :item_images, dependent: :destroy
 
   belongs_to_active_hash :prefecture
