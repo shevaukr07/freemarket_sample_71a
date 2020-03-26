@@ -4,18 +4,20 @@ class CreateItems < ActiveRecord::Migration[5.0]
       t.string :name, null: false
       t.integer :price, null: false
       t.text :introduce, null: false
-      t.references :user, foreign_key: true
-      t.references :brand, foreign_key: true
-      t.references :size, foreign_key: true
-      t.references :commodity_condition, foreign_key: true
-      t.references :shipping_charge, foreign_key: true
-      t.references :shipping_mathod, foreign_key: true
-      t.integer :prefecture_id,  null: false
-      t.references :shipping_day, foreign_key: true
-      t.integer :purchase
-      t.integer :buyer
+      t.integer :brand_id
+      t.integer :size_id
+      t.integer :commodity_condition_id
+      t.integer :shipping_charge_id
+      t.integer :shipping_method_id
+      t.integer :prefecture_id
+      t.integer :shipping_day_id
+      t.integer :purchase_id
+      t.references :seller
+      t.references :buyer
 
       t.timestamps
     end
+    add_foreign_key :items, :users, column: :seller_id
+    add_foreign_key :items, :users, column: :buyer_id
   end
 end

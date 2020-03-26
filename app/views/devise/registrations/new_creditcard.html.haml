@@ -11,14 +11,14 @@
               カード番号
             %p.hissu
               必須
-          = f.text_field :card_number, {placeholder: "半角数字のみ", class: "form-content"}
+          = f.text_field :/, {placeholder: "半角数字のみ", class: "form-content"}
         .form-group
           .teams
             %h3.i-n-team
               カード会社
             %p.hissu
               必須
-          = f.select :card_company, Card.card_companies.keys, {}, {class: 'form-group__input'}
+          = f.select :/, Card.card_companies.keys, {}, {class: 'form-group__input'}
           %ul.card-logo-lists
             %li.card-logo-lists__list
               = image_tag 'card-logo/jcb-logomark-img-01.gif', alt: 'JCB', class: 'card-icon'
@@ -37,11 +37,11 @@
             %p.hissu
               必須
             %br
-          = f.select :card_year, options_for_select(["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]), {}, {class: "form-content--half"}
+          = f.select :/, options_for_select(["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"]), {}, {class: "form-content--half"}
           = f.label :月, class: "form-group__year-and-month"
           %br
           %br
-          = f.select :card_month, options_for_select(["20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"]), {}, {class: "form-content--half"}
+          = f.select :/, options_for_select(["20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30"]), {}, {class: "form-content--half"}
           = f.label :年, class: "form-group__year-and-month"
         .form-group
           .teams
@@ -50,6 +50,6 @@
             %p.hissu
               必須
             %br
-          = f.text_field :card_pass, placeholder: "3~4桁", class: "form-content secrity-code"
+          = f.text_field :/, placeholder: "3~4桁", class: "form-content secrity-code"
         .form-group.submit-content
           = f.submit "登録する", class: "form-submit", url: "creditcards_path", method: :post

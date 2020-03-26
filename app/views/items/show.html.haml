@@ -20,7 +20,7 @@
               ¥4,980
             .buypage__main__item__texts__send-fee
               （税込）送料込み
-      %form.buypage__main__item__form
+      .buypage__main__item__form
         .buypage__main__item__form__price
           .upper
             .buypage__main__item__form__price__label
@@ -58,9 +58,19 @@
             = link_to '変更する', '/', class: 'text-decolation-none'
         
         .buypage__main__item__form__buy-btn
-          = link_to '購入する', '/', class: 'buypage__main__item__form__buy-btn'
-    
-
+          = link_to 'カード登録', card_path, class: 'buypage__main__item__form__buy-btn'
+        .buypage__main__item__form__buy-btn
+          = link_to '購入する', 'http://localhost:3000/purchase/index', class: 'buypage__main__item__form__buy-btn'
+        
+          -# = form_tag(action: :purchase, method: :post) do
+          -# = form_for purchase_items_path do
+          -#   :plain
+          -#     <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_49f768b08fbd8f8c54252cf3"></script>
+          
+          = form_tag(purchase_items_path, method: :post) do
+            %script.payjp-button{"data-key" => "pk_test_49f768b08fbd8f8c54252cf3", :src => "https://checkout.pay.jp", :type => "text/javascript","data-text" => "クレジット決済"}
+            = submit_tag
+            
   .buy-page__footer
     .buy-page__footer__top
       = link_to 'プライバシーポリシー', '/', class: 'another-link'
@@ -74,3 +84,4 @@
     .buy-page__footer__middle--image
       ©︎Furima, Inc.
     .buy-page__footer__bottom
+      
