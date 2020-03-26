@@ -3,6 +3,7 @@ require 'carrierwave/storage/file'
 require 'carrierwave/storage/fog'
 
 CarrierWave.configure do |config|
+
   if Rails.env.production? # 本番環境:AWS使用
     config.storage = :fog
     config.fog_provider = 'fog/aws'

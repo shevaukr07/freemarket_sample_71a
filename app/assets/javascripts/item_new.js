@@ -20,6 +20,21 @@ $(document).on('turbolinks:load', function () {
       return html;
     }
 
+    if (window.location.href.match(/\/items\/\d+\/edit/)) {
+      var prevContent = $('.label-content').prev();
+      $('.preview-box').each(function (index, box) {
+        $(box).attr('id', `preview-box__${index}`);
+      })
+      $('.delete-box').each(function (index, box) {
+        $(box).attr('id', `delete_btn_${index}`);
+      })
+      var count = $('.preview-box').length;
+      if (count == 5) {
+        $('.label-content').hide();
+      }
+    }
+
+
     $(document).on('change', '.hidden-field', function () {
       var id = $(this).attr('id').replace(/[^0-9]/g, '');
       $('.label-box').attr({ id: `label-box--${id}`, for: `item_item_images_attributes_${id}_image` });
@@ -40,6 +55,10 @@ $(document).on('turbolinks:load', function () {
           $('.label-content').hide();
         }
 
+        if ($(`#item_item_images_attributes_${id}_destroy`)) {
+          $(`#item_item_images_attributes_${id}__destroy`).prop('checked', false);
+        }
+
         if (count < 5) {
           $('.label-box').attr({ id: `label-box--${count}`, for: `item_item_images_attributes_${count}_image` });
         }
@@ -50,16 +69,29 @@ $(document).on('turbolinks:load', function () {
       var count = $('.preview-box').length;
       var id = $(this).attr('id').replace(/[^0-9]/g, '');
       $(`#preview-box__${id}`).remove();
-      $(`#item_item_images_attributes_${id}_image`).val("");
 
-      var count = $('.preview-box').length;
-      if (count == 4) {
-        $('.label-content').show();
-      }
-
-      if (id < 5) {
-        $('.label-box').attr({ id: `label-box--${id}`, for: `item_item_images_attributes_${id}_image` });
+      if ($(`#item_item_images_attributes_${id}__destroy`).length == 0) {
+        $(`#item_item_images_attributes_${id}_image`).val("");
+        var count = $('.preview-box').length;
+        if (count == 4) {
+          $('.label-content').show();
+        }
+        if (id < 5) {
+          $('.label-box').attr({ id: `label-box--${id}`, for: `item_item_images_attributes_${id}_image` });
+        }
+      } else {
+        $(`#item_item_images_attributes_${id}__destroy`).prop('checked', true);
+        if (count == 4) {
+          $('.label-content').show();
+        }
+        var count = $('.preview-box').length;
+        if (count == 4) {
+          $('.label-content').show();
+        }
+        if (id < 5) {
+          $('.label-box').attr({ id: `label-box--${id}`, for: `item_item_images_attributes_${id}_image` });
+        }
       }
     });
   });
-})
+});
