@@ -7,4 +7,8 @@ class TestsController < ApplicationController
 
   end
 
+  def test
+    
+  end
+
 end
