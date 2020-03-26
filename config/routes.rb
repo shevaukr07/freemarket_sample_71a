@@ -27,6 +27,12 @@ Rails.application.routes.draw do
       post 'purchase'
     end
   end
+
+  namespace :item do
+    resources :secound, only: [:index ,:show]
+  end
+
+
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
