@@ -29,8 +29,8 @@
               = f.fields_for @item, :item_images do |i|
                 = i.file_field :image, class: "hidden-field"
                 = i.check_box:_destroy, class: "hidden-checkbox"
-                - @item.item_images.length.upto(4) do |n|
-                  %input{ class: "hidden-field", name: "item[item_images_attributes][#{n}][image]", id: "item_item_images_attributes_#{n}_image", type:"file"}
+                - @item.item_images.length.upto(5) do |n|
+                  %input{ class: "hidden-field", name: "item[item_images_attributes][#{n - 1}][image]", id: "item_item_images_attributes_#{n - 1}_image", type:"file"}
 
       .i-n-names
         .i-n-names__inner
