@@ -39,13 +39,13 @@
             = f.text_area :introduce,lows: "50",cols: "8", placeholder: "商品の説明", class: 'form-content text-area'
       .i-n-categories
         .i-n-categories__inner
-          .i-n-categories__inner__category
-            .teams
-              %h3.i-n-team
-                カテゴリー
-              %p.hissu
-                必須
-            = f.select :/, [['メンズ', 1], ['レディース', 2], ['その他', 3]], { include_blank: true, selected: 1 }, class: 'form-content'
+          -# .i-n-categories__inner__category
+          -#   .teams
+          -#     %h3.i-n-team
+          -#       カテゴリー
+          -#     %p.hissu
+          -#       必須
+          -#   = f.select :/, [['メンズ', 1], ['レディース', 2], ['その他', 3]], { include_blank: true, selected: 1 }, class: 'form-content'
           .i-n-categories__inner__brand
             .teams
               %h3.i-n-team
