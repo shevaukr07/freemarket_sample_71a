@@ -15,6 +15,6 @@ extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :shipping_day
   belongs_to_active_hash :shipping_method
   belongs_to_active_hash :shipping_charge
-  belongs_to_active_hash :size
+  belongs_to_active_hash :sizes
   accepts_nested_attributes_for :item_images, allow_destroy: true
 end
