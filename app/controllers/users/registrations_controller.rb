@@ -30,9 +30,12 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new_address and return
     end
     @user.build_address(@address.attributes)
-    session["address"] = @address.attributes
-    @creditcard = @user.build_card
-    render :new_creditcard
+    @user.save
+    sign_in(:user, @user)
+    redirect_to root_path
+    # session["address"] = @address.attributes
+    # @creditcard = @user.build_card
+    # render :new_creditcard
   end
 
   def create_creditcard
@@ -51,7 +54,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   def address_params
-    params.require(:address).permit(:address,:postal_code, :prefecture, :city, :apartment)
+    params.require(:address).permit(:address,:postal_code, :prefecture_id, :city, :apartment)
   end
 
   def creditcard_params
