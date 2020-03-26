@@ -9,9 +9,9 @@ class ItemsController < ApplicationController
     #   image = item.item_images.first
     #   # image = images[0]
     #   items[:item] = item
-    #   items[:image] = image 
+    #   items[:image] = image
     #   @items_data << items
-    #   # binding.pry 
+    #   # binding.pry
     # end
 
   end
@@ -27,11 +27,11 @@ class ItemsController < ApplicationController
   def create
 
     @item = Item.new(item_params)
-    if @item.save!
-      redirect_to root_path
-    else
-      render :new
+    unless @item.valid?
+      redirect_to new_item_path and return
     end
+    @item.save
+    redirect_to root_path and return
   end
 
   def edit
@@ -39,10 +39,13 @@ class ItemsController < ApplicationController
   end
 
   def update
-    binding.pry
     @item = Item.find(params[:id])
+    @new_item = Item.new(item_update_params)
+    unless @new_item.valid?
+      redirect_to edit_item_path and return
+    end
     @item.update(item_update_params)
-    redirect_to root_path
+    redirect_to root_path and return
   end
 
   private
