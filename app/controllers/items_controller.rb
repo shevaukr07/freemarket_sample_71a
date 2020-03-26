@@ -22,11 +22,25 @@ class ItemsController < ApplicationController
     end
   end
 
+  def edit
+    @item = Item.find(params[:id])
+  end
+
+  def update
+    binding.pry
+    @item = Item.find(params[:id])
+    @item.update(item_update_params)
+    redirect_to root_path
+  end
+
   private
 
   def item_params
     params.require(:item).permit(:name, :price, :introduce, :brand_id, :size_id, :commodity_condition_id, :shipping_charge_id, :shipping_method_id,:prefecture_id, :shipping_day_id, item_images_attributes: [:image]).merge(seller_id: current_user.id).merge(buyer_id: current_user.id)
-    # params.require(:item).require(:item_images_attributes).require(:"0").permit(:image)
+  end
+
+  def item_update_params
+    params.require(:item).permit(:name, :price, :introduce, :brand_id, :size_id, :commodity_condition_id, :shipping_charge_id, :shipping_method_id,:prefecture_id, :shipping_day_id, item_images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id).merge(buyer_id: current_user.id)
   end
 
   def purchase
