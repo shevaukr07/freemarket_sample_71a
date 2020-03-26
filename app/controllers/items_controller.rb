@@ -2,6 +2,18 @@ class ItemsController < ApplicationController
   require 'payjp'
 
   def index
+    # @items_data = []
+    @items = Item.all
+    # @items.each do |item|
+    #   items = {}
+    #   image = item.item_images.first
+    #   # image = images[0]
+    #   items[:item] = item
+    #   items[:image] = image 
+    #   @items_data << items
+    #   # binding.pry 
+    # end
+
   end
 
   def show
@@ -13,7 +25,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    binding.pry
+
     @item = Item.new(item_params)
     if @item.save!
       redirect_to root_path
@@ -51,7 +63,6 @@ class ItemsController < ApplicationController
     #   currency: 'jpy'
     # )
     # redirect_to root_path, notice: "支払いが完了しました"
-    binding.pry
     Payjp.api_key = "sk_test_322f9158a6159e107c587430"
     Payjp::Charge.create(currency: 'jpy', amount: 111, card: params['payjp-token'])
     redirect_to root_path, notice: "支払いが完了しました"

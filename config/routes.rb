@@ -15,13 +15,24 @@ Rails.application.routes.draw do
     post 'creditcards', to: 'users/registrations#create_creditcard'
   end
   root 'tests#index'
-  resources :tests, only: [:index, :new]
+  resources :tests, only: [:index, :new] do
+    collection do
+      get 'test'
+    end
+  end
   resources :users, only: [:show]
+
   resources :items do
     collection do
       post 'purchase'
     end
   end
+
+  namespace :item do
+    resources :secound, only: [:index ,:show]
+  end
+
+
   resources :card, only: [:new, :show] do
     collection do
       post 'show', to: 'card#show'
