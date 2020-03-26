@@ -175,7 +175,8 @@
             = link_to image_tag 'https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/7/a001.png'
           .category-list-body
           .category-name
-            product1
+            = link_to 'http://localhost:3000/items', class: "a-btn" do
+              nagaosan
           .details
             .price
               10000円
