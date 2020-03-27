@@ -26,7 +26,7 @@
             %th
               ブランド
             %td
-              -# = @item.brand.id
+              ブランド
           %tr
             %th
               商品の状態
@@ -62,23 +62,19 @@
           (税込)
         .item-explain__price__sendway
           送料込み
+      .item-btn-contents
         - if user_signed_in?
           - if current_user.id == @item.seller_id
-            =link_to item_secound_path ,class:"item-explain__link"  do
+            =link_to edit_item_path(@item) ,class:"item-explain__link my-item-btn"  do
+              .item-explain__link__btn.btn-blue
+                編集
+            =link_to item_path, method: :delete, class:"item-explain__link my-item-btn"  do
               .item-explain__link__btn
-                購入画面に進む
-            =link_to item_secound_path ,class:"item-explain__link"  do
-              .item-explain__link__btn
-                購入画面に進む
-            -# サクジョボtっ、編集長
+                削除
           - else
             =link_to item_secound_path ,class:"item-explain__link"  do
               .item-explain__link__btn
                 購入画面に進む
-          -# 購入ボタン
-          
-
-
       .item-explain__content
         = @item.introduce
         %br
@@ -107,69 +103,11 @@
     %i.fab.fa-twitter-square.fa-4x
     %i.fab.fa-pinterest-square.fa-4x
     %i.fab.fa-line.fa-4x
-  
+
 .another
   = link_to '#',class: 'text-decolation-none' do
     .another__title
       テストユーザーさんのその他の出品
     .items-another
-      .another__texts
-        .another__texts__image
-          = link_to '#' , class: 'another-image' do
-            = image_tag "item-img/raica1.jpg", alt: "商品画像", class: "",size: "220x220"
-        .another__texts__group
-          .another__texts__group__name
-            商品タイトル
-          .another__texts__group__price
-            ¥9800円
-      .another__texts
-        .another__texts__image
-          = link_to '#' , class: 'another-image' do
-            = image_tag "item-img/raica1.jpg", alt: "AppStoreで入手", class: "",size: "220x220"
-        .another__texts__group
-          .another__texts__group__name
-            商品タイトル
-          .another__texts__group__price
-            ¥9800円
-      .another__texts
-        .another__texts__image
-          = link_to '#' , class: 'another-image' do
-            = image_tag "item-img/raica1.jpg", alt: "AppStoreで入手", class: "",size: "220x220"
-        .another__texts__group
-          .another__texts__group__name
-            商品タイトル
-          .another__texts__group__price
-            ¥9800円
-      .another__texts
-        .another__texts__image
-          = link_to '#' , class: 'another-image' do
-            = image_tag "item-img/raica1.jpg", alt: "AppStoreで入手", class: "",size: "220x220"
-        .another__texts__group
-          .another__texts__group__name
-            商品タイトル
-          .another__texts__group__price
-            ¥9800円
-      .another__texts
-        .another__texts__image
-          = link_to '#' , class: 'another-image' do
-            = image_tag "item-img/raica1.jpg", alt: "AppStoreで入手", class: "",size: "220x220"
-        .another__texts__group
-          .another__texts__group__name
-            商品タイトル
-          .another__texts__group__price
-            ¥9800円
-      .another__texts
-        .another__texts__image
-          = link_to '#' , class: 'another-image' do
-            = image_tag "item-img/raica1.jpg", alt: "AppStoreで入手", class: "",size: "220x220"
-        .another__texts__group
-          .another__texts__group__name
-            商品タイトル
-          .another__texts__group__price
-            ¥9800円
-    
-  
-      
-      
-
-
+      - @my_items.each do |item|
+        = render partial: 'shared/item', locals: {item: item}
