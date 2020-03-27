@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   require 'payjp'
 
   def index
-    @items = Item.all(purchase_id: nil)
+    @items = Item.all
   end
 
   def show
