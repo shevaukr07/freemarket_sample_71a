@@ -27,7 +27,7 @@
           %li.header-nav__right__item
             = link_to items_path, class: "header-nav-link" do
               商品一覧
-           %li.header-nav__right__item
+          %li.header-nav__right__item
             = link_to user_path(current_user), class: "header-nav-link" do
               -if user_signed_in?
                 =current_user.nickname
