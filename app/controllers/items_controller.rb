@@ -9,13 +9,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @user = User.find(@item.seller_id)
     @my_items = Item.where(seller_id: @item.seller_id)
-    # @prefecture = Prefecture.find(@item.prefecture_id)
-    # @commodity_condition = CommodityCondition.find(@item.commodity_condition_id)
-    # @shipping_charge = ShippingCharge.find(@item.shipping_charge_id)
-    # @shipping_method = ShippingMethod.find(@item.shipping_method_id)
-    # @shipping_day = ShippingDay.find(@item.shipping_day_id)
-    # @introduce = Introduce.find(@item.introduce)
-    # @brand = Brand.find(@item.brand_id)
   end
 
   def new
@@ -24,7 +17,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-
     @item = Item.new(item_params)
     unless @item.valid?
       redirect_to new_item_path and return
@@ -47,9 +39,14 @@ class ItemsController < ApplicationController
     @item.update(item_update_params)
     redirect_to root_path and return
   end
+
   def destroy
     @item =Item.find(params[:id])
-    @item.destroy
+    if @item.destroy
+      redirect_to items_path
+    else
+      redirect_to item_path(@item)
+    end
   end
 
   private
