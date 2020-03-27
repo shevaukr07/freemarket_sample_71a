@@ -1,0 +1,116 @@
+
+.i-n
+  .i-n__inner
+    = form_for @item do |f|
+      .i-n-image
+        .i-n-image__inner
+          .teams
+            %h3.i-n-team
+              出品画像
+            %p.hissu
+              必須
+          .i-n-image__inner__container
+            .prev-content
+              - @item.item_images.each do |image|
+                .preview-box
+                  .upper-box
+                    = image_tag image.image.url, alt: "preview"
+                  .lower-box
+                    .update-box
+                      %label.edit-btn 編集
+                    .delete-box
+                      .delete-btn
+                        %span 削除
+            .label-content
+              %label{for: "item_item_images_attributes_#{@item.item_images.length}_image", class: "label-box", id: "label-box--#{@item.item_images.length}"}
+                %pre.label-box__text-visible クリックしてファイルをアップロード
+              %p 最大5枚までアップロードできます
+            .hidden-content
+
+              = f.fields_for @item, :item_images do |i|
+                = i.file_field :image, class: "hidden-field"
+                = i.check_box:_destroy, class: "hidden-checkbox"
+                - @item.item_images.length.upto(5) do |n|
+                  %input{ class: "hidden-field", name: "item[item_images_attributes][#{n - 1}][image]", id: "item_item_images_attributes_#{n - 1}_image", type:"file"}
+
+      .i-n-names
+        .i-n-names__inner
+          .i-n-names__inner__name
+            .teams
+              %h3.i-n-team
+                商品名
+              %p.hissu
+                必須
+            = f.text_field :name, placeholder: "40文字まで", class: 'form-content'
+          .i-n-names__inner__text
+            .teams
+              %h3.i-n-team
+                商品の説明
+              %p.hissu
+                必須
+            = f.text_area :introduce,lows: "50",cols: "8", placeholder: "商品の説明", class: 'form-content text-area'
+      .i-n-categories
+        .i-n-categories__inner
+          .i-n-categories__inner__category
+            .teams
+              %h3.i-n-team
+                カテゴリー
+              %p.hissu
+                必須
+            = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name,{}, class: 'form-content'
+          .i-n-categories__inner__brand
+            .teams
+              %h3.i-n-team
+                ブランド
+              %p.not_hissu
+                任意
+            = f.select :brand_id, {シャネル: 1, エルメス: 2}, { include_blank: true, selected: 1 }, class: 'form-content'
+          .i-n-categories__inner__condition
+            .teams
+              %h3.i-n-team
+                商品の状態
+              %p.not_hissu
+                任意
+            = f.collection_select :commodity_condition_id, CommodityCondition.all, :id, :value, class: 'form-content'
+      .i-n-delivery
+        .i-n-delivery__inner
+          .i-n-delivery__inner__method
+            .teams
+              %h3.i-n-team
+                配送
+              %p.hissu
+                必須
+            = f.collection_select :shipping_method_id, ShippingMethod.all, :id, :value, class: 'form-content'
+          .i-n-delivery__inner__charge
+            .teams
+              %h3.i-n-team
+                配送料の負担
+              %p.hissu
+                必須
+            = f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :value, class: 'form-content'
+          .i-n-delivery__inner__prefecture
+            .teams
+              %h3.i-n-team
+                発送元の地域
+              %p.hissu
+                必須
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, class: 'form-content'
+          .i-n-delivery__inner__day
+            .teams
+              %h3.i-n-team
+                発送までの日数
+              %p.hissu
+                必須
+            = f.collection_select :shipping_day_id, ShippingDay.all, :id, :value, class: 'form-content'
+      .i-n-prices
+        .i-n-prices__inner
+          .i-n-prices__inner__price
+            .teams.teams-price
+              %h3.i-n-team
+                販売価格
+              %p.hissu
+                必須
+            = f.number_field :price, placeholder: "0", class: 'form-content num-form'
+      .i-n-submit
+        .i-n-submit__inner
+          = f.submit "出品する", class: 'form-submit hidden-btn'
