@@ -21,6 +21,7 @@ class ItemsController < ApplicationController
       redirect_to new_item_path and return
     end
     @item.save
+    flash[:success] = "投稿が完了しました"
     redirect_to root_path and return
   end
 
