@@ -1,4 +1,4 @@
--# = image_tag "/uploads/item_image/image/4/images.jpeg", alt: "AppStoreで入手", class: "img" ,size: "60x60" 
+-# = image_tag "/uploads/item_image/image/4/images.jpeg", alt: "AppStoreで入手", class: "img" ,size: "60x60"
 -# images.jpeg
 .form
   -# - @items_data.each do |items|
@@ -11,7 +11,7 @@
   -#           =items[:item].name
   -#           .item__bottom__title__hidden-box
   -#       .item__price
-  -#         ¥#{items[:item].price} 
+  -#         ¥#{items[:item].price}
 
   - @items.each do |item|
     .item-share
@@ -21,9 +21,11 @@
         .item-share__bottom
           %span.item-share__bottom__title
             =item.name
+            
             .item-share__bottom__title__hidden-box
         .item-share__price
           ¥#{item.price} 
+
 
 
 
