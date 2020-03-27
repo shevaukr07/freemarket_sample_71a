@@ -22,6 +22,8 @@
  @import "top_page/sec3";
  @import "moduls/header";
  @import "top_page/aside";
+ @import "top_page/category";
+ @import "top_page/brand";
  @import "moduls/footer";
  @import "top_page/purchase-btn";
  @import "items/item_new";
@@ -32,6 +34,5 @@
  @import "users/show";
  @import "config/colors";
  @import "moduls/flash";
-
-
-
+ @import "items/item_show";
+ @import "items/item_share";

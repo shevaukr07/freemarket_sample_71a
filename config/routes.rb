@@ -22,7 +22,7 @@ Rails.application.routes.draw do
       get 'sold'
     end
   end
-  resources :users, only: [:show]
+  resources :users, only: [:show,:destroy]
 
   resources :items do
     collection do
