@@ -243,8 +243,9 @@
         = image_tag 'material/logo/logo-white.png', alt: 'logo', class: 'logo-link__white-img'
     %p.footer__logos__text
       © FURIMA
-= link_to "items/new" do
-  .purchase-btn
-    %span.purchase-btn__text
-      出品する
-    = image_tag 'material/icon/icon_camera.png', alt: '出品', class: 'purchase-btn__img'
+- if user_signed_in?
+  = link_to "items/new" do
+    .purchase-btn
+      %span.purchase-btn__text
+        出品する 
+        = image_tag 'material/icon/icon_camera.png', alt: '出品', class: 'purchase-btn__img'
