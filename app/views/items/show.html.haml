@@ -1,32 +1,22 @@
-
-
 .inner
   .item-name
-    #{@item.name}
+    = @item.name
   .top
     .item
       .item__left
         .item__left__mainpic
           = image_tag @item.item_images.first.image.url, alt: "AppStoreで入手", class: "img" ,size: "270x360"
         .item__left__subpic
-          .item____left__subpic1__1.subpic
-            = image_tag @item.item_images[0].image.url, alt: "AppStoreで入手", class: "img1"
-          .item__sub-pic2__subpic__2.subpic
-            = image_tag "item-img/item1.jpg", alt: "AppStoreで入手", class: "img1"
-          .item__sub-pic3__subpic__3.subpic
-            = image_tag "item-img/item1.jpg", alt: "AppStoreで入手", class: "img1"
-          .item__sub-pic4__subpic__4.subpic
-            = image_tag "item-img/item1.jpg", alt: "AppStoreで入手", class: "img1"
-          .item__sub-pic5__subpic__5.subpic
-            = image_tag "item-img/item1.jpg", alt: "AppStoreで入手", class: "img1"
+          - @item.item_images.each do |image|
+            .item__left__subpic1__1.subpic
+            = image_tag image.image.url, alt: "AppStoreで入手", class: "img1" ,size: "270x360"
       .item__right
         %table
           %tr
             %th
               出品者
             %td
-              出品者名前
-              %i.icon-good
+              = @user.nickname
           %tr
             %th
               カテゴリー
@@ -36,95 +26,72 @@
             %th
               ブランド
             %td
-              ブランド名
+              -# = @item.brand.id
           %tr
             %th
               商品の状態
             %td
-              こんな状態です
+              = @item.commodity_condition.value
           %tr
             %th
               配送料の負担
             %td
-              送料こみ
+              = @item.shipping_charge.value
           %tr
             %th
               配送の方法
             %td
-              ゆうゆうメルカリ便
+              = @item.shipping_method.value
           %tr
             %th
               配送元地域
             %td
-              神奈川県
+              = @item.prefecture.name
           %tr
             %th
               配送日の目安
             %td
-              １〜2日以内に発送
+              = @item.shipping_day.value
   .middle
     .item-explain
       .item-explain__price
         .item-explain__price__num
-          ¥#{@item.price}
+          ¥
+          = @item.price
         .item-explain__price__tax
           (税込)
         .item-explain__price__sendway
           送料込み
-      =link_to item_secound_path,class:"item-explain__link"  do
-        .item-explain__link__btn
-          購入画面に進む
+        - if user_signed_in?
+          - if current_user.id == @item.seller_id
+            =link_to 'http://localhost:3000/items/show' ,class:"item-explain__link"  do
+              .item-explain__link__btn
+                購入画面に進む
+            =link_to 'http://localhost:3000/items/show' ,class:"item-explain__link"  do
+              .item-explain__link__btn
+                購入画面に進む
+            -# サクジョボtっ、編集長
+          - else
+            =link_to 'http://localhost:3000/items/show' ,class:"item-explain__link"  do
+              .item-explain__link__btn
+                購入画面に進む
+          -# 購入ボタン
+          
+
+
       .item-explain__content
-        this place is explain about item 
-        %br
-        this place is explain about item 
-        %br
-        this place is explain about item 
-        %br
-        this place is explain about item 
-        %br
-        this place is explain about item 
-        %br
-        this place is explain about item 
-        %br
-        this place is explain about item 
-        %br
-        this place is explain about item 
-        %br
-        this place is explain about item 
-        %br
-        this place is explain about item 
-        %br
-        this place is explain about item 
-        %br
-        this place is explain about item 
-        %br
-        this place is explain about item 
-        %br        
-        this place is explain about item 
-        %br
-        this place is explain about item 
-        %br
-        this place is explain about item 
-        %br
-        this place is explain about item 
-        %br
-        this place is explain about item 
-        %br
-        this place is explain about item 
-        %br
-        this place is explain about item 
+        = @item.introduce
         %br
     .item-explain__under
       .left
-        =link_to '/' ,class:"item-explain__under__iine"  do
+        =link_to '#' ,class:"item-explain__under__iine"  do
           .item-explain__under__btn
             %i.far.fa-heart いいね! 4
-          =link_to '/' ,class:"item-explain__under__iine"  do
+          =link_to '#' ,class:"item-explain__under__iine"  do
             .item-explain__under__btn
               %i.far.fa-flag 不適切な商品の報告
       .right
-        =link_to '/' ,class:"item-explain__under__iine"  do
+        =link_to '#' ,class:"item-explain__under__iine"  do
           .item-explain__under__btn
             %i.far.fa-flag  あんしん・あんぜんへの取り組み
   .bottom
@@ -132,7 +99,7 @@
       .comment__attention
         相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
       %textarea.comment__area
-      =link_to '/' ,class:'text-decolation-none' do
+      =link_to '#' ,class:'text-decolation-none' do
         .comment__btn
           %p コメントする
   .social
@@ -142,13 +109,13 @@
     %i.fab.fa-line.fa-4x
   
 .another
-  = link_to '/',class: 'text-decolation-none' do
+  = link_to '#',class: 'text-decolation-none' do
     .another__title
       テストユーザーさんのその他の出品
     .items-another
       .another__texts
         .another__texts__image
-          = link_to '/' , class: 'another-image' do
+          = link_to '#' , class: 'another-image' do
             = image_tag "item-img/raica1.jpg", alt: "商品画像", class: "",size: "220x220"
         .another__texts__group
           .another__texts__group__name
@@ -157,7 +124,7 @@
             ¥9800円
       .another__texts
         .another__texts__image
-          = link_to '/' , class: 'another-image' do
+          = link_to '#' , class: 'another-image' do
             = image_tag "item-img/raica1.jpg", alt: "AppStoreで入手", class: "",size: "220x220"
         .another__texts__group
           .another__texts__group__name
@@ -166,7 +133,7 @@
             ¥9800円
       .another__texts
         .another__texts__image
-          = link_to '/' , class: 'another-image' do
+          = link_to '#' , class: 'another-image' do
             = image_tag "item-img/raica1.jpg", alt: "AppStoreで入手", class: "",size: "220x220"
         .another__texts__group
           .another__texts__group__name
@@ -175,7 +142,7 @@
             ¥9800円
       .another__texts
         .another__texts__image
-          = link_to '/' , class: 'another-image' do
+          = link_to '#' , class: 'another-image' do
             = image_tag "item-img/raica1.jpg", alt: "AppStoreで入手", class: "",size: "220x220"
         .another__texts__group
           .another__texts__group__name
@@ -184,7 +151,7 @@
             ¥9800円
       .another__texts
         .another__texts__image
-          = link_to '/' , class: 'another-image' do
+          = link_to '#' , class: 'another-image' do
             = image_tag "item-img/raica1.jpg", alt: "AppStoreで入手", class: "",size: "220x220"
         .another__texts__group
           .another__texts__group__name
@@ -193,7 +160,7 @@
             ¥9800円
       .another__texts
         .another__texts__image
-          = link_to '/' , class: 'another-image' do
+          = link_to '#' , class: 'another-image' do
             = image_tag "item-img/raica1.jpg", alt: "AppStoreで入手", class: "",size: "220x220"
         .another__texts__group
           .another__texts__group__name
