@@ -16,8 +16,10 @@
             = link_to destroy_user_session_path,method: :delete, class: "u-s-side-list-link" do
               ログアウト
           %li.u-s-side__nav__lists__list
-            = link_to new_card_path, class: "u-s-side-list-link" do
-              カード登録
+            = link_to pay_card_index_path,class:"u-s-side-list-link" do
+              クレジットカード登録
+              
+          
     .u-s-main
       .u-s-images
         .u-s-images__contents

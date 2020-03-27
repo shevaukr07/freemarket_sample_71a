@@ -2,15 +2,15 @@
 
 .inner
   .item-name
-    商品タイトル.
+    #{@item.name}
   .top
     .item
       .item__left
         .item__left__mainpic
-          = image_tag "item-img/item1.jpg", alt: "AppStoreで入手", class: "img"
+          = image_tag @item.item_images.first.image.url, alt: "AppStoreで入手", class: "img" ,size: "270x360"
         .item__left__subpic
           .item____left__subpic1__1.subpic
-            = image_tag "item-img/item1.jpg", alt: "AppStoreで入手", class: "img1"
+            = image_tag @item.item_images[0].image.url, alt: "AppStoreで入手", class: "img1"
           .item__sub-pic2__subpic__2.subpic
             = image_tag "item-img/item1.jpg", alt: "AppStoreで入手", class: "img1"
           .item__sub-pic3__subpic__3.subpic
@@ -66,12 +66,12 @@
     .item-explain
       .item-explain__price
         .item-explain__price__num
-          ¥3,800
+          ¥#{@item.price}
         .item-explain__price__tax
           (税込)
         .item-explain__price__sendway
           送料込み
-      =link_to 'http://localhost:3000/items/show' ,class:"item-explain__link"  do
+      =link_to item_secound_path,class:"item-explain__link"  do
         .item-explain__link__btn
           購入画面に進む
       .item-explain__content

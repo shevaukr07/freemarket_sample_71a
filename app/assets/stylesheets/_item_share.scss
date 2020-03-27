@@ -1,4 +1,4 @@
-.item:hover{
+.item-share:hover{
   outline:solid 2px rgb(12, 169, 231);
   transition: 0.3;
 }
@@ -7,7 +7,7 @@
 .form{
   display: flex;
 }
-.item{
+.item-share{
   margin: 1.5rem;
   height:25rem;
   width:18.7rem;

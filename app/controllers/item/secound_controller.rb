@@ -4,6 +4,6 @@ class Item::SecoundController < ApplicationController
   end
 
   def show
-  
+    @item = Item.find(params[:id])
   end
 end
