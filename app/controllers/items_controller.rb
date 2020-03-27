@@ -6,8 +6,9 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id]) 
+    @item = Item.find(params[:id])
     @user = User.find(@item.seller_id)
+    @my_items = Item.where(seller_id: @item.seller_id)
     # @prefecture = Prefecture.find(@item.prefecture_id)
     # @commodity_condition = CommodityCondition.find(@item.commodity_condition_id)
     # @shipping_charge = ShippingCharge.find(@item.shipping_charge_id)
@@ -15,7 +16,6 @@ class ItemsController < ApplicationController
     # @shipping_day = ShippingDay.find(@item.shipping_day_id)
     # @introduce = Introduce.find(@item.introduce)
     # @brand = Brand.find(@item.brand_id)
-
   end
 
   def new

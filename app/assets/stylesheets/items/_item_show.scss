@@ -1,0 +1,231 @@
+
+  .item-btn-contents {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  .my-item-btn {
+    margin: 10px;
+    font-size: 1.6rem;
+    letter-spacing: 2;
+  }
+.item-explain__link__btn.btn-blue {
+  background: blue;
+}
+
+    // Place all the styles related to the items controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+// index
+body{
+  background-color: rgb(230, 230, 230);
+}
+.text-decolation-none{
+  text-decoration: none;
+}
+.inner *{
+  color: #2a2929;
+  background-color: white;
+}
+.inner{
+  text-align: center;
+  margin: 0 auto;
+  width: 680px;
+  padding-top: 40px;
+  word-wrap: break-word;
+
+  .item-name{
+    font-size:24px;
+    padding-top: 40px;
+    font-weight:bold;
+
+    }
+  .item{
+    display: flex;
+    padding-top: 40px;
+    padding-right: 40px;
+    &__name{
+      font-size: 24px;
+    }
+    &__left{
+      &__subpic{
+        height: 120px;
+        width: 270px;
+        margin: 0 auto;
+        .img1{
+          float: left;
+          width: 54px;
+          height: 60px;
+        }
+      }
+    }
+    .img{
+      width: 270x;
+      height: 360px;
+      margin: 0 40px;
+    }
+    &__right{
+      table{
+        height: 420px;
+        width: 300px;
+        border-collapse:collapse;
+        border: solid 1px #FAFAFA;
+        th{
+          background-color: #FAFAFA;
+          font-weight: normal;
+        }
+        td{
+          background-color:#FFFFFF;
+        }
+      }
+    }
+  }
+
+  //  middle
+  .item-explain{
+    width: 650px;
+    margin: 0 auto;
+    &__link{
+      text-decoration: none;
+    }
+    &__price *{
+      display: inline-block;
+    }
+    &__price {
+      &__num{
+      font-size: 50px;
+      font-weight: bold;
+      }
+      &__tax{
+      font-size: 10px
+      }
+      &__sendway{
+      font-size: 16px
+      }
+    }
+    &__content{
+      font-size:normal;
+    }
+    &__content{
+      font-size:14px;
+    }
+    &__under{
+      display: flex;
+      justify-content: space-between;
+      padding: 2rem;
+      .left{
+        display: flex;
+
+      }
+      &__btn *{
+        background-color: #d4d4d4;
+        border-radius: 40px;
+        padding: 1rem;
+
+      }
+    }
+    &__link{
+      &__btn{
+        font-size: 14px;
+        font-weight: bold;
+        background-color: #EA352D;
+        color: white;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+      }
+    }
+  }
+
+
+  // bottom
+  .comment{
+    margin-top: 20px;
+    padding: 26px;
+    margin-bottom: 20px;
+    &__attention{
+      width: 628px;
+      background-color: rgb(255, 246, 222);
+      padding: 8px;
+      font-size: 14px;
+      margin: 0 auto;
+    }
+    &__area{
+      width: 100%;
+      height: 82px;
+    }
+
+    &__btn p{
+      background-color: #AAAAAA;
+      height: 48px;
+      width: 100%;
+      color: white;
+      font-weight: bold;
+      line-height: 48px;
+      text-decoration: none;
+    }
+  }
+  .social{
+    height: 82px;
+    line-height: 82px;
+    .fa-facebook-square{
+      color: #385185;
+    }
+    .fa-twitter-square{
+      color: #5D9Dc9;
+    }
+    .fa-pinterest-square{
+      color: #AA262A;
+    }
+    .fa-line{
+      color: #00C137;
+    }
+  }
+
+}
+
+
+  .another{
+    background-color: rgb(230, 230, 230);
+    text-align: center;
+    margin: 0 auto;
+    width: 680px;
+    padding: 4rem 1rem;
+    word-wrap: break-word;
+    &__title{
+      font-size: 14px;
+      color:#0099E8;
+      font-size: 22px;
+      text-align: left;
+      margin-top: 30px;
+    }
+    .items-another{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content:start ;
+    }
+    &__texts{
+      width: 220px;
+      height: 330px;
+      background-color: white;
+      margin-top: 20px;
+      &__group{
+        width: 220px;
+        height: 120px;
+        padding: 16px;
+        text-align: left;
+        &__name{
+          width: 188px;
+          height: 48px;
+          font-size: 16px;
+        }
+        &__price{
+          width: 188px;
+          height: 16px;
+          font-size: 14px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
