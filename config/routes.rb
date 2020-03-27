@@ -31,7 +31,11 @@ Rails.application.routes.draw do
   end
 
   namespace :item do
-    resources :secound, only: [:index ,:show]
+    resources :secound, only: [:index ,:show] do
+      member do
+        get 'sold'
+      end
+    end
   end
 
 
@@ -42,7 +46,7 @@ Rails.application.routes.draw do
       post 'delete', to: 'card#delete'
     end
   end
-  
+
   resources :purchase, only: [:index] do
     collection do
       # get 'index', to: 'purchase#index'
@@ -58,5 +62,5 @@ Rails.application.routes.draw do
   end
   # get 'items/purchase' :to 'items#purchase'
 
-    
+
 end
