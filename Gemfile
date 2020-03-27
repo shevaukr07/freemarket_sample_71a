@@ -76,3 +76,4 @@ gem 'jquery-rails'
 gem 'dotenv-rails'
 
 gem 'pry-rails'
+gem 'ancestry'
