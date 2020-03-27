@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   require 'payjp'
 
   def index
-    @items = Item.all
+    @items = Item.where(purchase_id: nil)
   end
 
   def show
@@ -37,7 +37,10 @@ class ItemsController < ApplicationController
     @item.update(item_update_params)
     redirect_to root_path and return
   end
-
+  def destroy
+    @item =Item.find(params[:id])
+    @item.destroy
+  end
 
   private
 
