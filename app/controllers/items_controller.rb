@@ -49,7 +49,6 @@ class ItemsController < ApplicationController
   end
 
   def purchase
-    Payjp.api_key = "sk_test_322f9158a6159e107c587430"
     Payjp::Charge.create(
       amount: 111,
       card: params['payjp-token'],
