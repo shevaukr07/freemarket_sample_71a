@@ -72,4 +72,5 @@ class ItemsController < ApplicationController
     redirect_to root_path, notice: "支払いが完了しました"
   end
 
+  
 end
