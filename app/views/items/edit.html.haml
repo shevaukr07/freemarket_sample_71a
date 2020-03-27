@@ -1,3 +1,4 @@
+
 .i-n
   .i-n__inner
     = form_for @item do |f|
@@ -29,8 +30,8 @@
               = f.fields_for @item, :item_images do |i|
                 = i.file_field :image, class: "hidden-field"
                 = i.check_box:_destroy, class: "hidden-checkbox"
-                - @item.item_images.length.upto(4) do |n|
-                  %input{ class: "hidden-field", name: "item[item_images_attributes][#{n}][image]", id: "item_item_images_attributes_#{n}_image", type:"file"}
+                - @item.item_images.length.upto(5) do |n|
+                  %input{ class: "hidden-field", name: "item[item_images_attributes][#{n - 1}][image]", id: "item_item_images_attributes_#{n - 1}_image", type:"file"}
 
       .i-n-names
         .i-n-names__inner
@@ -56,7 +57,7 @@
                 カテゴリー
               %p.hissu
                 必須
-            = f.select :/, [['メンズ', 1], ['レディース', 2], ['その他', 3]], { include_blank: true, selected: 1 }, class: 'form-content'
+            = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name,{}, class: 'form-content'
           .i-n-categories__inner__brand
             .teams
               %h3.i-n-team
@@ -112,4 +113,4 @@
             = f.number_field :price, placeholder: "0", class: 'form-content num-form'
       .i-n-submit
         .i-n-submit__inner
-          = f.submit "出品する", class: 'form-submit'
+          = f.submit "出品する", class: 'form-submit hidden-btn'

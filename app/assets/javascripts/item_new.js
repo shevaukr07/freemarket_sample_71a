@@ -2,7 +2,6 @@
 $(document).on('turbolinks:load', function () {
   $(function () {
 
-    //プレビューのhtmlを定義
     function buildHTML(count) {
       var html = `<div class="preview-box" id="preview-box__${count}">
                     <div class="upper-box">
@@ -40,6 +39,7 @@ $(document).on('turbolinks:load', function () {
       $('.label-box').attr({ id: `label-box--${id}`, for: `item_item_images_attributes_${id}_image` });
       var file = this.files[0];
       var reader = new FileReader();
+      $('.hidden-btn').show();
       reader.readAsDataURL(file);
       reader.onload = function () {
         var image = this.result;
@@ -70,6 +70,10 @@ $(document).on('turbolinks:load', function () {
       var id = $(this).attr('id').replace(/[^0-9]/g, '');
       $(`#preview-box__${id}`).remove();
 
+      if (id == 0) {
+        $('.hidden-btn').hide();
+      }
+
       if ($(`#item_item_images_attributes_${id}__destroy`).length == 0) {
         $(`#item_item_images_attributes_${id}_image`).val("");
         var count = $('.preview-box').length;
@@ -93,5 +97,8 @@ $(document).on('turbolinks:load', function () {
         }
       }
     });
+    if ($('.preview-box').length == 0) {
+      $('.hidden-btn').hide();
+    }
   });
 });
