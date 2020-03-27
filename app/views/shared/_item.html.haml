@@ -1,11 +1,12 @@
 .form
-  .item-share
-    = link_to "/", class: "" do
-      .item__image
-        = image_tag "#", alt: "商品画像", class: "",size: "187x187"
-      .item__bottom
-        %span.item__bottom__title
-          タイトル
-          .item__bottom__title__hidden-box
-      .item__price
-        価格
+  - @items.each do |item|
+    .item-share
+      = link_to item_path(item), class: "" do
+        .item-share__image
+          = image_tag item.item_images[0].image.url , alt: "商品画像", class: "",size: "187x187"
+        .item-share__bottom
+          %span.item-share__bottom__title
+            =item.name
+            .item-share__bottom__title__hidden-box
+        .item-share__price
+          ¥#{item.price} 

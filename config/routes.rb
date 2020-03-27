@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   resources :tests, only: [:index, :new] do
     collection do
       get 'test'
+      get 'bought'
+      get 'sold'
     end
   end
   resources :users, only: [:show]
@@ -43,7 +45,13 @@ Rails.application.routes.draw do
   
   resources :purchase, only: [:index] do
     collection do
-      get 'index', to: 'purchase#index'
+      # get 'index', to: 'purchase#index'
+      # post 'pay', to: 'purchase#pay'
+      # get 'done', to: 'purchase#done'
+    end
+
+    member do
+      post 'index', to: 'purchase#index'
       post 'pay', to: 'purchase#pay'
       get 'done', to: 'purchase#done'
     end
