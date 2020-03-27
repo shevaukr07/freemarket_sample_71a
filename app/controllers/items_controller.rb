@@ -6,7 +6,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id]) 
+    @item = Item.find(params[:id])
     @user = User.find(@item.seller_id)
     # @prefecture = Prefecture.find(@item.prefecture_id)
     # @commodity_condition = CommodityCondition.find(@item.commodity_condition_id)

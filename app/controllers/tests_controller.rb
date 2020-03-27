@@ -20,6 +20,9 @@ class TestsController < ApplicationController
   end
   def sold
     @user = User.find(current_user.id)
-    @items = Item.where(seller_id: @user,purchase_id:nil)
+    # @items = Item.where(seller_id: @user,purchase_id:nil)
+    @items = Item.where(seller_id: @user)
+    # redirect_to sold_tests_path
+    redirect_to root_path
   end
 end

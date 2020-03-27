@@ -64,15 +64,15 @@
           送料込み
         - if user_signed_in?
           - if current_user.id == @item.seller_id
-            =link_to 'http://localhost:3000/items/show' ,class:"item-explain__link"  do
+            =link_to item_secound_path ,class:"item-explain__link"  do
               .item-explain__link__btn
                 購入画面に進む
-            =link_to 'http://localhost:3000/items/show' ,class:"item-explain__link"  do
+            =link_to item_secound_path ,class:"item-explain__link"  do
               .item-explain__link__btn
                 購入画面に進む
             -# サクジョボtっ、編集長
           - else
-            =link_to 'http://localhost:3000/items/show' ,class:"item-explain__link"  do
+            =link_to item_secound_path ,class:"item-explain__link"  do
               .item-explain__link__btn
                 購入画面に進む
           -# 購入ボタン
