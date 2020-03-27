@@ -17,7 +17,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-
     @item = Item.new(item_params)
     unless @item.valid?
       redirect_to new_item_path and return
@@ -43,8 +42,11 @@ class ItemsController < ApplicationController
 
   def destroy
     @item =Item.find(params[:id])
-    @item.destroy
-    redirect_to items_path
+    if @item.destroy
+      redirect_to items_path
+    else
+      redirect_to item_path(@item)
+    end
   end
 
   private
