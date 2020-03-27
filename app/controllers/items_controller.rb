@@ -2,23 +2,11 @@ class ItemsController < ApplicationController
   require 'payjp'
 
   def index
-    # @items_data = []
     @items = Item.all
-
-    # @items.each do |item|
-    #   items = {}
-    #   image = item.item_images.first
-    #   # image = images[0]
-    #   items[:item] = item
-    #   items[:image] = image
-    #   @items_data << items
-    #   # binding.pry
-    # end
-
   end
 
   def show
-    @item = Item.find(params[:id]) 
+    @item = Item.find(params[:id])
   end
 
   def new
