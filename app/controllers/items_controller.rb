@@ -5,11 +5,11 @@ class ItemsController < ApplicationController
     @items = Item.where(purchase_id: nil)
   end
 
-  # def show
-  #   @item = Item.find(params[:id])
-  #   @user = User.find(@item.seller_id)
-  #   @my_items = Item.where(seller_id: @item.seller_id)
-  # end
+  def show
+    @item = Item.find(params[:id])
+    @user = User.find(@item.seller_id)
+    @my_items = Item.where(seller_id: @item.seller_id)
+  end
 
   def new
     @item = Item.new
@@ -40,10 +40,11 @@ class ItemsController < ApplicationController
     @item.update(item_update_params)
     redirect_to root_path and return
   end
-  # def destroy
-  #   @item =Item.find(params[:id])
-  #   @item.destroy
-  # end
+
+  def destroy
+    @item =Item.find(params[:id])
+    @item.destroy
+  end
 
   private
 
