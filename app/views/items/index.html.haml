@@ -1,18 +1,4 @@
--# = image_tag "/uploads/item_image/image/4/images.jpeg", alt: "AppStoreで入手", class: "img" ,size: "60x60" 
--# images.jpeg
 .form
-  -# - @items_data.each do |items|
-  -#   .item
-  -#     = link_to "/", class: "" do
-  -#       .item__image
-  -#         = image_tag items[:image].image.url , alt: "商品画像", class: "",size: "187x187"
-  -#       .item__bottom
-  -#         %span.item__bottom__title
-  -#           =items[:item].name
-  -#           .item__bottom__title__hidden-box
-  -#       .item__price
-  -#         ¥#{items[:item].price} 
-
   - @items.each do |item|
     .item-share
       = link_to item_path(item), class: "" do
@@ -25,9 +11,15 @@
         .item-share__price
           ¥#{item.price} 
 
-
-
-
--# .div
-      -# = image.image
-      -# = image_tag "/uploads/item_image/image/4/#{image.image.url}", alt: "AppStoreで入手"
+-# 配列の取り出し方各種
+-# - @items_data.each do |items|
+  -#   .item
+  -#     = link_to "/", class: "" do
+  -#       .item__image
+  -#         = image_tag items[:image].image.url , alt: "商品画像", class: "",size: "187x187"
+  -#       .item__bottom
+  -#         %span.item__bottom__title
+  -#           =items[:item].name
+  -#           .item__bottom__title__hidden-box
+  -#       .item__price
+  -#         ¥#{items[:item].price} 
