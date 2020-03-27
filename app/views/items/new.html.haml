@@ -45,7 +45,7 @@
                 カテゴリー
               %p.hissu
                 必須
-            = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name,{}, class: 'form-content'
+            = f.collection_select :category_id,Category.where(ancestry: nil), :id, :name, class: 'form-content'
           .i-n-categories__inner__brand
             .teams
               %h3.i-n-team
