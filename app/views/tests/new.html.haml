@@ -8,6 +8,9 @@
               出品一覧
           %li.u-s-side__nav__lists__list
             = link_to "#", class: "u-s-side-list-link" do
+              購入一覧
+          %li.u-s-side__nav__lists__list
+            = link_to "#", class: "u-s-side-list-link" do
               プロフィール編集
           %li.u-s-side__nav__lists__list
             = link_to "#", class: "u-s-side-list-link" do
@@ -15,12 +18,6 @@
           %li.u-s-side__nav__lists__list
             = link_to destroy_user_session_path,method: :delete, class: "u-s-side-list-link" do
               ログアウト
-          %li.u-s-side__nav__lists__list
-            = link_to destroy_user_session_path, class: "u-s-side-list-link" do
-              購入商品一覧
-          %li.u-s-side__nav__lists__list
-            = link_to destroy_user_session_path, class: "u-s-side-list-link" do
-              出品商品一覧
           %li.u-s-side__nav__lists__list
             = link_to pay_card_index_path,class:"u-s-side-list-link" do
               クレジットカード登録
@@ -33,7 +30,7 @@
             = image_tag 'moduls/makonari.jpg', alt: '社長', class: 'profile-image'
           .u-s-images__contents__names
             %p.u-s-images__contents__names__name
-              社長
+              =@user.nickname
       .u-s-texts
         .u-s-texts__contents
           %p.u-s-texts__contents__text

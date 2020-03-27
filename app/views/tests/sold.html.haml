@@ -8,7 +8,11 @@
         .item-share__bottom
           %span.item-share__bottom__title
             =item.name
+            if item.seller_id == current_user.id
+              = link_to item_path(item),method: :delete, class: "" do
+                %i.fas.fa-trash-alt
             .item-share__bottom__title__hidden-box
         .item-share__price
           ¥#{item.price}
+          
         
