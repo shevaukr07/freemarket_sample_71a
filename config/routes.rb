@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   resources :tests, only: [:index, :new] do
     collection do
       get 'test'
+      get 'bought'
+      get 'sold'
     end
   end
   resources :users, only: [:show]

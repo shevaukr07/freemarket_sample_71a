@@ -50,13 +50,14 @@ class ItemsController < ApplicationController
   end
 
   def purchase
+
+    Payjp.api_key = ""
     Payjp::Charge.create(
       amount: 111,
       card: params['payjp-token'],
       currency: 'jpy'
     )
     redirect_to root_path, notice: "支払いが完了しました"
-
   end
 
 end
