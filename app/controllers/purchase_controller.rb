@@ -34,10 +34,12 @@ class PurchaseController < ApplicationController
     # redirect_to action: 'done' #完了画面に移動
     # @item.save
     @item.update(purchase_id: 1, buyer_id: current_user.id)
+    binding.pry
     redirect_to done_purchase_path(@item) #完了画面に移動
   end
   def done
     @item = Item.find(params[:id])
+    binding.pry
   end
 
 end
