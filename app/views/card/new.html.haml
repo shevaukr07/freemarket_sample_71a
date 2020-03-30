@@ -3,4 +3,7 @@
     ガードが未登録の方はこちらのボタンを押してカード登録を完了してください。
   = form_tag(pay_card_index_path, method: :post) do
     :plain
-      <script type="text/javascript" src="https://checkout.pay.jp" class="payjp-button" data-key="pk_test_49f768b08fbd8f8c54252cf3"></script>
+      <script type="text/javascript" 
+      src="https://checkout.pay.jp" 
+      class="payjp-button" data-key="pk_test_49f768b08fbd8f8c54252cf3" 
+      data-text="カード番号を登録する"></script>
