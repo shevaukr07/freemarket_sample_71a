@@ -1,6 +1,9 @@
-%h1購入決済完了しました！
+.card-done
+  %h1購入決済完了しました！
 
-%h2 商品名：レトロカメラleica ミニチュア コレクションシリーズ
--# %p 価格：¥135,000(送料込み)
-%p 価格：¥#{@item.price}(送料込み)
-= link_to 'pay.jp','https://pay.jp/d/charges'
+  %h3 商品名：#{@item.name}
+  %h3 価格：¥#{@item.price}(送料込み)
+  = link_to root_path ,class:'btn' do
+    %button.submit-btn 商品一覧へ戻る
+  = link_to 'https://pay.jp/d/charges',class:'btn' do
+    %button.submit-btn pay.jp
