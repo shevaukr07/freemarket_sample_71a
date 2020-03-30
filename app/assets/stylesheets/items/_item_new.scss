@@ -72,21 +72,24 @@
         border-bottom: solid 1px rgba(0, 0, 0, 0.2);
         &__inner {
           .label-content {
-
+            width: 30rem;
+            margin: 0 auto;
+            text-align: center;
             .label-box {
               &__text-visible {
-                top: 50%;
-                left: 16px;
-                right: 16px;
-                text-align: center;
-                font-size: 3rem;
-                line-height: 1.5;
+                padding: 2rem;
+                border: 1px solid rgba(0, 0, 0, 0.4);
+                background: rgba(0, 0, 0, 0.3);
+                margin: 0 auto;
+                cursor: pointer;
+                font-size: 1.2rem;
                 font-weight: bold;
-                // -webkit-transform: translate(0, -50%);
-                // transform: translate(0, -50%);
-                // pointer-events: none;
                 white-space: pre-wrap;
                 word-wrap: break-word;
+              }
+              &__text-visible:hover {
+                color: rgba(0, 0, 0, 0.6);
+                background: rgba(0, 0, 0, 0.1);
               }
             }
           }
@@ -220,7 +223,7 @@
       }
       .delete-box {
         color: #00b0ff;
-        width: 50%;
+        width: 100%;
         height: 50px;
         line-height: 50px;
         border: 1px solid #eee;
