@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+ @import "config/colors";
  @import "font-awesome-sprockets";
  @import "font-awesome";
  @import "normalize";
@@ -32,7 +33,6 @@
  @import "devise/registrations/new_address";
  @import "devise/registrations/new_credit_card";
  @import "users/show";
- @import "config/colors";
  @import "moduls/flash";
  @import "items/item_show";
  @import "items/item_share";

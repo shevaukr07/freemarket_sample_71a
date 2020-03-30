@@ -13,12 +13,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def create
     @user = User.new(sign_up_params)
     unless @user.valid?
-      flash.now[:alert] = @user.errors.full_messages
+      flash.now[:alert] = "必須項目を確認してください"
       render :new and return
     end
     session["devise.regist_data"] = {user: @user.attributes}
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
     @address = @user.build_address
+    flash.now[:notice] = "住所を入力して下さい"
     render :new_address
   end
 
@@ -26,12 +27,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user = User.new(session["devise.regist_data"]["user"])
     @address = Address.new(address_params)
     unless @address.valid?
-      flash.now[:alert] = @address.errors.full_messages
+      flash.now[:alert] = "必須項目を確認してください"
       render :new_address and return
     end
     @user.build_address(@address.attributes)
     @user.save
     sign_in(:user, @user)
+    flash[:notice] = "登録が完了しました"
     redirect_to root_path
     # session["address"] = @address.attributes
     # @creditcard = @user.build_card
