@@ -66,10 +66,13 @@
             =link_to item_path(@item), method: :delete, class:"item-explain__link my-item-btn"  do
               .item-explain__link__btn
                 削除
-          - else
-            =link_to item_secound_path ,class:"item-explain__link"  do
+          - elsif @item.purchase_id == nil
+            = link_to item_secound_path ,class:"item-explain__link"  do
               .item-explain__link__btn
                 購入画面に進む
+          - else
+            .sold-btn
+              売り切れ
       .item-explain__content
         = @item.introduce
         %br
