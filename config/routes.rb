@@ -30,7 +30,6 @@ Rails.application.routes.draw do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
-    end
   end
 
   namespace :item do
@@ -51,12 +50,6 @@ Rails.application.routes.draw do
   end
 
   resources :purchase, only: [:index] do
-    collection do
-      # get 'index', to: 'purchase#index'
-      # post 'pay', to: 'purchase#pay'
-      # get 'done', to: 'purchase#done'
-    end
-
     member do
       post 'index', to: 'purchase#index'
       post 'pay', to: 'purchase#pay'

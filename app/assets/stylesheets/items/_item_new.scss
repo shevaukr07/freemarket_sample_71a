@@ -33,6 +33,7 @@
   height: 4rem;
   font-size: 1.2rem;
   display: inline;
+  cursor: pointer;
 }
 
 #item_prefecture_id {
@@ -149,6 +150,9 @@
         border-bottom: solid 1px rgba(0, 0, 0, 0.2);
         &__inner {
           &__category {
+            .cattegory-contents__inner {
+              margin-bottom: 1.5rem;
+            }
           }
           &__brand {
 

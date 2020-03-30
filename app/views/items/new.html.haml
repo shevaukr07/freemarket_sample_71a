@@ -45,7 +45,9 @@
                 カテゴリー
               %p.hissu
                 必須
-            = f.collection_select :category_id,Category.where(ancestry: nil), :id, :name,{ include_blank: '選択してください' }, class: 'form-content--select'
+            .category-contents
+              .cattegory-contents__inner
+                = f.collection_select :category_id,Category.where(ancestry: nil), :id, :name,{ include_blank: '選択してください' }, class: 'form-content--select'
           .i-n-categories__inner__brand
             .teams
               %h3.i-n-team
