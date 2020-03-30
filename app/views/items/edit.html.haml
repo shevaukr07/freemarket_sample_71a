@@ -55,21 +55,21 @@
                 カテゴリー
               %p.hissu
                 必須
-            = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name,{}, class: 'form-content'
+            = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name,{}, class: 'form-content--select'
           .i-n-categories__inner__brand
             .teams
               %h3.i-n-team
                 ブランド
               %p.not_hissu
                 任意
-            = f.select :brand_id, {シャネル: 1, エルメス: 2}, { include_blank: true, selected: 1 }, class: 'form-content'
+            = f.select :brand_id, {シャネル: 1, エルメス: 2}, {}, class: 'form-content--select'
           .i-n-categories__inner__condition
             .teams
               %h3.i-n-team
                 商品の状態
-              %p.not_hissu
-                任意
-            = f.collection_select :commodity_condition_id, CommodityCondition.all, :id, :value, class: 'form-content'
+              %p.hissu
+                必須
+            = f.collection_select :commodity_condition_id, CommodityCondition.all, :id, :value,{}, class: 'form-content--select'
       .i-n-delivery
         .i-n-delivery__inner
           .i-n-delivery__inner__method
@@ -78,28 +78,28 @@
                 配送
               %p.hissu
                 必須
-            = f.collection_select :shipping_method_id, ShippingMethod.all, :id, :value, class: 'form-content'
+            = f.collection_select :shipping_method_id, ShippingMethod.all, :id, :value,{}, class: 'form-content--select'
           .i-n-delivery__inner__charge
             .teams
               %h3.i-n-team
                 配送料の負担
               %p.hissu
                 必須
-            = f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :value, class: 'form-content'
+            = f.collection_select :shipping_charge_id, ShippingCharge.all, :id, :value,{}, class: 'form-content--select'
           .i-n-delivery__inner__prefecture
             .teams
               %h3.i-n-team
                 発送元の地域
               %p.hissu
                 必須
-            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, class: 'form-content'
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name,{}, class: 'form-content--select'
           .i-n-delivery__inner__day
             .teams
               %h3.i-n-team
                 発送までの日数
               %p.hissu
                 必須
-            = f.collection_select :shipping_day_id, ShippingDay.all, :id, :value, class: 'form-content'
+            = f.collection_select :shipping_day_id, ShippingDay.all, :id, :value,{}, class: 'form-content--select'
       .i-n-prices
         .i-n-prices__inner
           .i-n-prices__inner__price

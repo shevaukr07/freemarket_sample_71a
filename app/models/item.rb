@@ -1,6 +1,6 @@
 class Item < ApplicationRecord
 extend ActiveHash::Associations::ActiveRecordExtensions
-  validates :name, :price, :introduce, :brand_id, :category_id, :commodity_condition_id, :shipping_charge_id, :shipping_method_id,:prefecture_id, :shipping_day_id, presence: true
+  validates :name, :price, :introduce, :category_id, :commodity_condition_id, :shipping_charge_id, :shipping_method_id,:prefecture_id, :shipping_day_id, presence: true
   belongs_to :buyer, class_name: 'User', :foreign_key => 'buyer_id'
   belongs_to :seller, class_name: 'User', :foreign_key => 'seller_id'
   belongs_to :category
