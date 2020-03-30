@@ -19,10 +19,11 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     unless @item.valid?
+      flash[:alert] = "必須項目を確認してください"
       redirect_to new_item_path and return
     end
     @item.save
-    flash[:success] = "投稿が完了しました"
+    flash[:notice] = "出品が完了しました"
     redirect_to root_path and return
   end
 
@@ -34,19 +35,26 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @new_item = Item.new(item_update_params)
     unless @new_item.valid?
+      flash[:alert] = "必須項目を確認してください"
       redirect_to edit_item_path and return
     end
     @item.update(item_update_params)
+    flash[:notice] = "編集が完了しました"
     redirect_to root_path and return
   end
 
   def destroy
     @item =Item.find(params[:id])
+
+    
+
     if @item.destroy
+      flash[:notice] = "商品を削除しました"
       redirect_to items_path
     else
       redirect_to item_path(@item)
     end
+
   end
 
   private
