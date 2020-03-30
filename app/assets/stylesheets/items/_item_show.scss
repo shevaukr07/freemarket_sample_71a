@@ -136,10 +136,38 @@ body{
         text-align: center;
       }
     }
+    .sold-btn {
+      font-size: 14px;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.4);
+      color: white;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+    }
   }
 
 
   // bottom
+  .buyer-profile {
+    &__top {
+      font-size: 2rem;
+      display: inline-block;
+      letter-spacing: 1;
+    }
+    &__name {
+      display: inline-block;
+      .user-page-link {
+        font-size: 3rem;
+        letter-spacing: 2px;
+        text-decoration: none;
+        text-shadow: 0.5rem 0.5rem 1rem #000000;
+      }
+      .user-page-link:hover {
+        color: rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
   .comment{
     margin-top: 20px;
     padding: 26px;

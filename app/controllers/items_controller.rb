@@ -9,13 +9,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @user = User.find(@item.seller_id)
     @my_items = Item.where(seller_id: @item.seller_id)
-    # @prefecture = Prefecture.find(@item.prefecture_id)
-    # @commodity_condition = CommodityCondition.find(@item.commodity_condition_id)
-    # @shipping_charge = ShippingCharge.find(@item.shipping_charge_id)
-    # @shipping_method = ShippingMethod.find(@item.shipping_method_id)
-    # @shipping_day = ShippingDay.find(@item.shipping_day_id)
-    # @introduce = Introduce.find(@item.introduce)
-    # @brand = Brand.find(@item.brand_id)
   end
 
   def new
@@ -24,7 +17,6 @@ class ItemsController < ApplicationController
   end
 
   def create
-
     @item = Item.new(item_params)
     unless @item.valid?
       flash[:alert] = "必須項目を確認してください"
@@ -50,11 +42,19 @@ class ItemsController < ApplicationController
     flash[:notice] = "編集が完了しました"
     redirect_to root_path and return
   end
+
   def destroy
     @item =Item.find(params[:id])
-    @item.destroy
-    flash[:notice] = "商品を削除しました"
-    redirect_to items_path
+
+    
+
+    if @item.destroy
+      flash[:notice] = "商品を削除しました"
+      redirect_to items_path
+    else
+      redirect_to item_path(@item)
+    end
+
   end
 
   private

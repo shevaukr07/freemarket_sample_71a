@@ -1,7 +1,7 @@
 class TestsController < ApplicationController
   def index
-    @items_top = Item.order(updated_at: :desc).limit(3)
-    @items_down = Item.order(updated_at: :asc).limit(3)
+    @items_top = Item.where(purchase_id: nil).order(updated_at: :desc).limit(3)
+    @items_down = Item.where(purchase_id: nil).order(updated_at: :asc).limit(3)
   end
 
   def new
@@ -17,13 +17,10 @@ class TestsController < ApplicationController
   def bought
     @user = User.find(current_user.id)
     @items = Item.where(buyer_id: @user,purchase_id:1)
-
   end
+
   def sold
-    @user = User.find(current_user.id)
-    # @items = Item.where(seller_id: @user,purchase_id:nil)
+    @user = User.find(params[:id])
     @items = Item.where(seller_id: @user)
-    # redirect_to sold_tests_path
-    redirect_to root_path
   end
 end
