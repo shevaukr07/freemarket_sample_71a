@@ -23,7 +23,7 @@
           %ul.parents_list
             - @parents.each do |parent|
               %li
-                = link_to "#{parent.name}", "/category/#{parent.id}", class: "parent_category",id: "#{parent.id}"
+                = link_to "#{parent.name}", "/categorys/#{parent.id}", class: "parent_category",id: "#{parent.id}"
           .children_list
 
           .grand_children_list
