@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   require 'payjp'
 
   def index
-    @items = Item.where(purchase_id: nil)
+    @items = Item.all
   end
 
   def show
@@ -54,7 +54,7 @@ class ItemsController < ApplicationController
   def destroy
     @item =Item.find(params[:id])
 
-    
+
 
     if @item.destroy
       flash[:notice] = "商品を削除しました"
