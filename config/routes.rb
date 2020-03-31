@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  # get 'purchase/index'
-
-  # get 'purchase/done'
-
+  # get 'categorys/new'
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  resources :categorys, only: [:new,:show,:index]
 
   devise_for :users, controllers: {
     registrations: 'users/registrations',

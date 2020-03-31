@@ -2,7 +2,10 @@ class ItemsController < ApplicationController
   require 'payjp'
 
   def index
-    @items = Item.all
+
+    @items = Item.where(purchase_id: nil)
+    @parents = Category.all.order("id ASC").limit(13)
+
   end
 
   def show
