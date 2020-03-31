@@ -7,6 +7,14 @@ class ItemsController < ApplicationController
 
   def show
     @item = Item.find(params[:id])
+    @category = @item.category
+    if @category.parent.present?
+      @parent = @category.parent
+      if @parent.parent.present?
+        @grandparent = @parent.parent
+      end
+    end
+
     @user = User.find(@item.seller_id)
     @my_items = Item.where(seller_id: @item.seller_id)
   end
