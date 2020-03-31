@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
 
   def category
-  @parents = Category.all.order("id ASC").limit(13)
+    @parents = Category.where(ancestry: nil).limit(13)
   end
   protected
     def configure_permitted_parameters
