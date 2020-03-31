@@ -9,5 +9,6 @@ class CategorysController < ApplicationController
 
   def show
     @items = Item.where(category_id: params[:id])
+    @parents = Category.all.order("id ASC").limit(13)
   end
 end

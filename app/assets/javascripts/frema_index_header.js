@@ -7,6 +7,12 @@ $(document).on('turbolinks:load', function () {
     $('.close-category').on("click",function(){
       $('.parents_list').slideUp();
     });
+    $('.close-category').on("click",function(){
+      $('.children_list').slideUp();
+    });
+    $('.close-category').on("click",function(){
+      $('.grand_children_list').slideUp();
+    });
     
     function buildChildHTML(child){
       var html =`<a class="child_category" id="${child.id}" 
