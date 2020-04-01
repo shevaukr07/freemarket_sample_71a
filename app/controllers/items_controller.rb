@@ -2,7 +2,9 @@ class ItemsController < ApplicationController
   require 'payjp'
 
   def index
-    @items = Item.all
+    @items = Item.where(purchase_id: nil)
+    @parents = Category.all.order("id ASC").limit(13)
+
   end
 
   def show
@@ -93,4 +95,5 @@ class ItemsController < ApplicationController
     redirect_to root_path, notice: "支払いが完了しました"
   end
 
+  
 end
