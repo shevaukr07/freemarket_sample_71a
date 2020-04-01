@@ -9,6 +9,8 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
     @user = User.find(@item.seller_id)
     @my_items = Item.where(seller_id: @item.seller_id)
+    @comment = Comment.new
+    @comments = @item.comments.includes(:user)
   end
 
   def new
@@ -44,17 +46,13 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item =Item.find(params[:id])
-
-    
-
+    @item = Item.find(params[:id])
     if @item.destroy
       flash[:notice] = "商品を削除しました"
-      redirect_to items_path
+      redirect_to root_path
     else
       redirect_to item_path(@item)
     end
-
   end
 
   def get_category_children
@@ -84,5 +82,4 @@ class ItemsController < ApplicationController
     )
     redirect_to root_path, notice: "支払いが完了しました"
   end
-
 end

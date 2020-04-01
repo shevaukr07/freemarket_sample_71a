@@ -98,16 +98,29 @@
     .comment
       .comment__attention
         相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      %textarea.comment__area
-      =link_to '#' ,class:'text-decolation-none' do
-        .comment__btn
-          %p コメントする
+      =form_for([@item, @comment], local: true) do |form|
+        =form.text_area :text, placeholder: "コメントする", rows: "3", class: "comment-field"
+        =form.submit "SEND", class:"btn"
+    .chat
+      %h1.font
+        ＜コメント一覧＞
+      .chat__comment
+        - if @comments
+          - @comments.each do |chat|
+            .chat__comment__box
+              .chat__comment__box__left
+                = image_tag 'moduls/makonari.jpg', alt: '社長', class: 'profile-image' ,size: "40x40"
+              .chat__comment__box__right
+                .chat__comment__box__right__name
+                  = link_to chat.user.nickname,"/users/#{chat.user_id}"
+                .chat__comment__box__right__text
+                  = chat.text
+                  .chat__comment__box__right__text__hukidashi
   .social
     %i.fab.fa-facebook-square.fa-4x
     %i.fab.fa-twitter-square.fa-4x
     %i.fab.fa-pinterest-square.fa-4x
     %i.fab.fa-line.fa-4x
-
 .another
   = link_to '#',class: 'text-decolation-none' do
     .another__title

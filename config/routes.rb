@@ -25,12 +25,14 @@ Rails.application.routes.draw do
   resources :users, only: [:show,:destroy]
 
   resources :items do
+    resources :comments, only: :create
     collection do
       post 'purchase'
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
   end
+
 
   namespace :item do
     resources :secound, only: [:index ,:show] do
@@ -57,6 +59,4 @@ Rails.application.routes.draw do
     end
   end
   # get 'items/purchase' :to 'items#purchase'
-
-
 end
