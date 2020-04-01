@@ -1,0 +1,29 @@
+.image_form {
+  &__contents {
+    .image-label {
+      font-size: 2rem;
+      cursor: pointer;
+      .prev-contents {
+        .prev-content {
+          width: 30rem;
+          padding: 1rem 2rem;
+          box-shadow: 0 0 10px rgba(255, 255, 255, 0.6)inset;
+          margin: 0 auto;
+          .prev-image {
+            object-fit: cover;
+            width: 100%;
+          }
+        }
+        .photo-icon {
+          border: 2px solid #ffffff;
+          padding: 1rem 2rem;
+          color: #000000;
+          font-size: 20rem;
+        }
+      }
+      .hidden-file {
+        display: none;
+      }
+    }
+  }
+}

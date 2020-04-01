@@ -13,6 +13,11 @@
   background: blue;
 }
 
+
+.category-name {
+  display: block;
+  font-size: 1rem;
+}
     // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
@@ -282,6 +287,11 @@ body{
       font-size: 22px;
       text-align: left;
       margin-top: 30px;
+      padding: 2rem;
+      display: flex;
+      p {
+        margin: 0;
+      }
     }
     .items-another{
       display: flex;

@@ -3,10 +3,20 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.where(purchase_id: nil)
+    @parents = Category.all.order("id ASC").limit(13)
+
   end
 
   def show
     @item = Item.find(params[:id])
+    @category = @item.category
+    if @category.parent.present?
+      @parent = @category.parent
+      if @parent.parent.present?
+        @grandparent = @parent.parent
+      end
+    end
+
     @user = User.find(@item.seller_id)
     @my_items = Item.where(seller_id: @item.seller_id)
     @comment = Comment.new
@@ -46,7 +56,12 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    @item = Item.find(params[:id])
+
+    @item =Item.find(params[:id])
+
+
+
+
     if @item.destroy
       flash[:notice] = "商品を削除しました"
       redirect_to root_path
@@ -82,4 +97,8 @@ class ItemsController < ApplicationController
     )
     redirect_to root_path, notice: "支払いが完了しました"
   end
+
+
+  
 end
+
