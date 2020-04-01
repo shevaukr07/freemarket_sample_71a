@@ -101,8 +101,7 @@
       .category-title
         新規投稿商品
       .category-lists
-        - @items_top.each do |item|
-          = render partial: 'shared/item', locals: {item: item}
+        = render partial: 'shared/item', collection: @items_top
 
   %section.flima_pic_brand
     %h1.category-head
@@ -111,8 +110,7 @@
       .category-title
         アーカイバ
       .category-lists
-        - @items_down.each do |item|
-          = render partial: 'shared/item', locals: {item: item}
+        = render partial: 'shared/item', collection: @items_down
 
 %aside.aside
   .aside__contents

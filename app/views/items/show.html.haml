@@ -118,7 +118,9 @@
 .another
   = link_to '#',class: 'text-decolation-none' do
     .another__title
-      テストユーザーさんのその他の出品
+      %p
+        = @user.nickname
+      %p
+        さんの出品一覧
     .items-another
-      - @my_items.each do |item|
-        = render partial: 'shared/item', locals: {item: item}
+      = render partial: 'shared/item', collection: @my_items
