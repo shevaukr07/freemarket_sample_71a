@@ -6,6 +6,7 @@
       = form_for(@user, url: user_registration_path) do |f|
         = render "devise/shared/error_messages", resource: resource
 
+        = f.file_field :image, class: 'hidden'
         .form-group
           .teams
             %h3.i-n-team
@@ -51,16 +52,18 @@
               = f.label :"お名前(全角)"
               %span.form-group__require
               .hissu 必須
-            = f.text_field :last_name,class:'form-group__input--half'
-            = f.text_field :first_name,class:'form-group__input--half'
+            .half-contents
+            = f.text_field :last_name,class:'input-half'
+            = f.text_field :first_name,class:'input-half'
 
           .form-group
             .form-name-kana
               = f.label :"お名前(かな)(全角)"
               %span.form-group__require
               .hissu 必須
-            = f.text_field :last_name_kana,class:'form-group__input--half'
-            = f.text_field :first_name_kana,class:'form-group__input--half'
+            .half-contents
+            = f.text_field :last_name_kana,class:'input-half'
+            = f.text_field :first_name_kana,class:'input-half'
 
           .form-group
             .form-barthday

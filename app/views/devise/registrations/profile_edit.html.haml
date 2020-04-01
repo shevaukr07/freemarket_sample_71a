@@ -1,0 +1,47 @@
+.sign-up-main
+  .sign-up-main__container
+    %h2.sign-up-main__container__title
+      プロフィール編集
+    .sign-up-main__container__forms
+      =form_for current_user, url: {action: 'profile_update'} do |f|
+        .form-group
+          .image_form
+            .image_form__contents
+              = f.label :image, class: 'image-label' do
+                .prev-contents
+                  = icon('fas', 'image', class: 'photo-icon')
+                = f.file_field :image, class: 'hidden-file'
+        .form-group
+          .teams
+            %h3.i-n-team
+              ニックネーム
+            %p.hissu
+              必須
+          = f.text_field :nickname, autofocus: true, class: 'form-content'
+        .form-group
+          .form-name
+            = f.label :"お名前(全角)"
+            %span.form-group__require
+            .hissu 必須
+          .half-contents
+            = f.text_field :last_name,class:'input-half'
+            = f.text_field :first_name,class:'input-half'
+
+        .form-group
+          .form-name-kana
+            = f.label :"お名前(かな)(全角)"
+            %span.form-group__require
+            .hissu 必須
+          .half-contents
+            = f.text_field :last_name_kana,class:'input-half'
+            = f.text_field :first_name_kana,class:'input-half'
+
+        .form-group
+          .form-barthday
+            = f.label :"生年月日"
+            %span.form-group__require
+            .hissu 必須
+            = f.date_select :birthday, use_month_numbers: true,start_year: 1900, end_year: (Time.now.year), default: Date.new(1989, 1, 1)
+
+        .form-group.submit-content
+          = f.submit '登録', class: "form-submit"

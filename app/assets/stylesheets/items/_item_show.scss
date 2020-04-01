@@ -232,6 +232,11 @@ body{
       font-size: 22px;
       text-align: left;
       margin-top: 30px;
+      padding: 2rem;
+      display: flex;
+      p {
+        margin: 0;
+      }
     }
     .items-another{
       display: flex;
