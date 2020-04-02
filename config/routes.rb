@@ -13,6 +13,8 @@ Rails.application.routes.draw do
     post 'addresses', to: 'users/registrations#create_address'
     get 'creditcards', to: 'users/registrations#new_creditcard'
     post 'creditcards', to: 'users/registrations#create_creditcard'
+    get 'profile_edit', to: 'users/registrations#profile_edit'
+    patch 'profile_update', to: 'users/registrations#profile_update'
   end
   root 'tests#index'
   resources :tests, only: [:index, :new] do
@@ -25,6 +27,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show,:destroy]
 
   resources :items do
+    resources :comments, only: :create
     collection do
       post 'purchase'
       get 'search'
@@ -33,6 +36,7 @@ Rails.application.routes.draw do
       
     end
   end
+
 
   namespace :item do
     resources :secound, only: [:index ,:show] do
@@ -61,4 +65,8 @@ Rails.application.routes.draw do
   # get 'items/purchase' :to 'items#purchase'
 
 
+
+  resources :addresses, only: [:edit, :update]
+
 end
+

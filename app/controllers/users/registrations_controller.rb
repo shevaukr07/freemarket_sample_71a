@@ -18,8 +18,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
     end
     session["devise.regist_data"] = {user: @user.attributes}
     session["devise.regist_data"][:user]["password"] = params[:user][:password]
+    session["devise.regist_data"][:user]["image"] = params[:user][:image]
     @address = @user.build_address
     flash.now[:notice] = "住所を入力して下さい"
+    binding.pry
     render :new_address
   end
 
@@ -36,9 +38,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
     sign_in(:user, @user)
     flash[:notice] = "登録が完了しました"
     redirect_to root_path
-    # session["address"] = @address.attributes
-    # @creditcard = @user.build_card
-    # render :new_creditcard
   end
 
   def create_creditcard
@@ -56,12 +55,31 @@ class Users::RegistrationsController < Devise::RegistrationsController
     redirect_to root_path
   end
 
+  def profile_edit
+
+  end
+
+  def profile_update
+    current_user.assign_attributes(account_update_params)
+    if current_user.save
+	    redirect_to root_path, notice: 'プロフィールを更新しました'
+    else
+      render "profile_edit"
+    end
+  end
+
+private
+
   def address_params
     params.require(:address).permit(:address,:postal_code, :prefecture_id, :city, :apartment)
   end
 
   def creditcard_params
     params.require(:card).permit(:card_company,:card_number, :card_year, :card_month, :card_pass)
+  end
+
+  def configure_account_update_params
+   devise_parameter_sanitizer.permit(:account_update, keys: [:nickname, :image])
   end
 
 end

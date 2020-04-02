@@ -1,0 +1,44 @@
+.sign-up-main
+  .sign-up-main__container
+    %h2.sign-up-main__container__title
+      住所入力
+    .sign-up-main__container__forms
+      =form_for(@address, url: address_path, method: :patch) do |f|
+        -# =render "devise/shared/error_messages", resource: @address
+        .form-group
+          .teams
+            %h3.i-n-team
+              郵便番号
+            %p.hissu
+              必須
+          = f.text_field :postal_code,{autofocus: true, placeholder: "例）123-4567", class: 'form-content'}
+        .form-group
+          .teams
+            %h3.i-n-team
+              都道府県
+            %p.hissu
+              必須
+          = f.collection_select :prefecture_id, Prefecture.all, :id, :name
+        .form-group
+          .teams
+            %h3.i-n-team
+              市町村
+            %p.hissu
+              必須
+          = f.text_field :city, autofocus: true, placeholder: "例）札幌市", class: 'form-content'
+        .form-group
+          .teams
+            %h3.i-n-team
+              番地
+            %p.hissu
+              必須
+          = f.text_field :address, autofocus: true, placeholder: "例）青葉1-1-1", class: 'form-content'
+        .form-group
+          .teams
+            %h3.i-n-team
+              建物名
+            %p.not_hissu
+              任意
+          = f.text_field :apartment, autofocus: true, placeholder: "例）柳ビル103", class: 'form-content'
+        .form-group.submit-content
+          = f.submit '更新', class: "form-submit"
