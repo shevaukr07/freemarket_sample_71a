@@ -1,3 +1,5 @@
+- breadcrumb :item
+= render "shared/gretel"
 .inner
   .item-name
     = @item.name
@@ -138,4 +140,5 @@
     .items-another
 
       - @my_items.each do |item|
+
         = render partial: 'shared/item', locals: {item: item}

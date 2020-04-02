@@ -11,6 +11,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
+    binding.pry
     @user = User.new(sign_up_params)
     unless @user.valid?
       flash.now[:alert] = "必須項目を確認してください"
@@ -33,6 +34,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new_address and return
     end
     @user.build_address(@address.attributes)
+    binding.pry
     @user.save
     sign_in(:user, @user)
     flash[:notice] = "登録が完了しました"

@@ -1,6 +1,10 @@
 -# =render partial:'shared/item',locals:{ article:@article }
 
-.form
-  - if @items.present?
-    - @items.each do |item|
-      = render partial: 'shared/item', locals: {item: item}
+.i-s
+  .inner
+    %h2.heading
+      購入済み商品
+    .form
+      - if @items.present?
+        - @items.each do |item|
+          = render partial: 'shared/item', locals: {item: item}

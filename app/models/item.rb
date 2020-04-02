@@ -14,4 +14,18 @@ extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :shipping_charge
   belongs_to_active_hash :size
   accepts_nested_attributes_for :item_images, allow_destroy: true
+
+  def self.search(search)
+    return Item.all unless search
+    Item.where('name LIKE(?)', "%#{search}%")
+  end
+
+
+  # def self.search(search)
+  #   if search
+  #     Item.where('text LIKE(?)', "%#{search}%")
+  #   else
+  #     Item.all
+  #   end
+  # end
 end

@@ -1,0 +1,19 @@
+-# =render partial:'shared/item',locals:{ article:@article }
+- breadcrumb :bought_items
+= render "shared/gretel"
+.t-b
+  .inner
+    %h2.heading
+      購入済み商品
+    .form
+      - @items.each do |item|
+        .item-share
+          = link_to item_path(item), class: "" do
+            .item-share__image
+              = image_tag item.item_images[0].image.url , alt: "商品画像", class: "",size: "187x187"
+            .item-share__bottom
+              %span.item-share__bottom__title
+                =item.name
+                .item-share__bottom__title__hidden-box
+            .item-share__price
+              ¥#{item.price}
