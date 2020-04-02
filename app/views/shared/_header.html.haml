@@ -5,11 +5,6 @@
         = link_to root_path, class: "icon__link" do
           = image_tag 'material/logo/logo.png', alt:'main-icon', class: 'main-icon'
       .header-form-box
-        -# %form
-        -#   %input(type="text" class="search-fild")
-        -#   %button.search-btn
-        -#     .search-btn__box
-        -#       = image_tag 'material/icon/icon-search 1.png', class:"search-icon"
         = form_tag(search_items_path, method: :get ,class:'form') do
           = text_field_tag :keyword, "", {class: "search-fild"}
           -# = submit_tag "検索", class: "search-btn"
