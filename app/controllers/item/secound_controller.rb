@@ -12,4 +12,6 @@ class Item::SecoundController < ApplicationController
     @user = User.find(params[:id])
     @items = Item.where(seller_id: @user)
   end
+
+  
 end

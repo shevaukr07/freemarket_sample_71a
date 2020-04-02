@@ -55,9 +55,6 @@ class ItemsController < ApplicationController
 
   def destroy
     @item =Item.find(params[:id])
-
-
-
     if @item.destroy
       flash[:notice] = "商品を削除しました"
       redirect_to items_path
@@ -73,6 +70,10 @@ class ItemsController < ApplicationController
 
   def get_category_grandchildren
       @category_grandchildren = Category.find(params[:child_id]).children
+  end
+
+  def search
+    @items = Item.search(params[:keyword])
   end
   private
 
@@ -95,5 +96,4 @@ class ItemsController < ApplicationController
     redirect_to root_path, notice: "支払いが完了しました"
   end
 
-  
 end

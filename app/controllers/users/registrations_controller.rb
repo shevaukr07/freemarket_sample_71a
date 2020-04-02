@@ -31,6 +31,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       render :new_address and return
     end
     @user.build_address(@address.attributes)
+    binding.pry
     @user.save
     sign_in(:user, @user)
     flash[:notice] = "登録が完了しました"

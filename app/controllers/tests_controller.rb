@@ -13,8 +13,8 @@ class TestsController < ApplicationController
     @user = user.find(params[:id])
   end
   def test
-
   end
+  
   def bought
     @user = User.find(current_user.id)
     @items = Item.where(buyer_id: @user,purchase_id:1)
