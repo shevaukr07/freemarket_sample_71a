@@ -78,3 +78,4 @@ gem 'dotenv-rails'
 gem 'pry-rails'
 gem 'ancestry'
 gem 'rails-i18n'
+gem "gretel"

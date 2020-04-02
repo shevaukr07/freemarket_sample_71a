@@ -1,3 +1,8 @@
-.form
-  = render partial: 'shared/item', collection: @items
-
+- breadcrumb :all_items
+= render "shared/gretel"
+.i-i
+  .inner
+    %h2.heading
+      商品一覧
+  .form
+    = render partial: 'shared/item', collection: @items

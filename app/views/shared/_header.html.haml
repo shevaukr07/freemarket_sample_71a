@@ -27,21 +27,20 @@
           .children_list
 
           .grand_children_list
-            
+
       %ul.header-nav__right
 
         - if user_signed_in?
-          %li.header-nav__right__item 
+          %li.header-nav__right__item
             = link_to  user_path(current_user), class: "header-nav-link" do
               マイページ
           %li.header-nav__right__item
             = link_to items_path, class: "header-nav-link" do
               商品一覧
         - unless user_signed_in?
-          %li.header-nav__right__item 
+          %li.header-nav__right__item
             = link_to new_user_session_path, class: "header-nav-link" do
               ログイン
           %li.header-nav__right__item
             = link_to new_user_registration_path, class: "header-nav-link" do
               新規会員登録
-

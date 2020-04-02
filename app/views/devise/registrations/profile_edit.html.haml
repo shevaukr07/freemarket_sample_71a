@@ -9,7 +9,11 @@
             .image_form__contents
               = f.label :image, class: 'image-label' do
                 .prev-contents
-                  = icon('fas', 'image', class: 'photo-icon')
+                  - if current_user.image.present?
+                    .prev-content
+                      = image_tag current_user.image.url, alt: 'プロフィール画像', class: "prev-image"
+                  - else
+                    = icon('fas', 'image', class: 'photo-icon')
                 = f.file_field :image, class: 'hidden-file'
         .form-group
           .teams

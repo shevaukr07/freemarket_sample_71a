@@ -29,11 +29,25 @@
  @import "top_page/purchase-btn";
  @import "items/item_new";
  @import "items/item_buy";
- @import "items/items";
  @import "devise/registrations/new_address";
  @import "devise/registrations/new_credit_card";
  @import "users/show";
  @import "moduls/flash";
  @import "items/item_show";
  @import "items/item_share";
- @import "moduls/prev-image"
+ @import "moduls/prev-image";
+ @import "moduls/sub_contents";
+ @import "moduls/gretel";
+
+ .heading {
+   font-size :2.6rem;
+   font-weight: bold;
+   text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+   display: inline;
+   background-color: transparent;
+ }
+
+ .inner {
+   text-align: center;
+   display: block;
+ }
