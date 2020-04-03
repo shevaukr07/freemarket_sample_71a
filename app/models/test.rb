@@ -1,4 +1,4 @@
-class Item < ApplicationRecord
+class Test < ApplicationRecord
 
 
 
