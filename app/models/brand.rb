@@ -1,3 +1,22 @@
-class Brand < ApplicationRecord
+class Brand < ActiveHash::Base
   # has_many :items
+
+  self.data = [
+      {id: 1, name: 'アー ヴェ ヴェ'}, {id: 2, name: 'アーカー'}, {id: 3, name: 'アシックス'},
+      {id: 4, name: 'アディダス'}, {id: 5, name: 'アトモスガール'}, {id: 6, name: 'アレクサンダーオルチ'},
+      {id: 7, name: 'イーストウエスト'}, {id: 8, name: 'イーストランド'}, {id: 9, name: 'イヴ サン ローラン'},
+      {id: 10, name: 'イエスタデイズトゥモロー'}, {id: 11, name: 'イグニス'}, {id: 12, name: '一澤帆布'},
+      {id: 13, name: 'イルビゾンテ'}, {id: 14, name: 'インケース'}, {id: 15, name: 'ヴィアリパブリカ'},
+      {id: 16, name: 'ヴィヴィアン ウエストウッド'}, {id: 17, name: 'ヴィクトリアンメイデン'}, {id: 18, name: 'ヴィドヴァンスター'},
+      {id: 19, name: 'ウィリアム ウォレス'}, {id: 20, name: 'ウィリアム・ギブスン'}, {id: 21, name: 'エアリスト'},
+      {id: 22, name: 'エアロポステール'}, {id: 23, name: 'エーフィールド'}, {id: 24, name: 'エクリア'},
+      {id: 25, name: 'エスアンドエイチ'}, {id: 26, name: 'エヌアイビー'}, {id: 27, name: 'エムエックスピー'},
+      {id: 28, name: 'エリオットマン'}, {id: 29, name: 'エルニドフリップス'}, {id: 30, name: 'オーバーザワン'},
+      {id: 31, name: 'オーレット'}, {id: 32, name: 'オリーチェ'}, {id: 33, name: '快晴堂'},
+      {id: 34, name: 'カシオペア'}, {id: 35, name: 'カマイウ'}, {id: 36, name: 'カルティエ'},
+      {id: 37, name: 'カルディ'}, {id: 38, name: 'ガガミラノ'}, {id: 39, name: 'キャトル'},
+      {id: 40, name: 'キャドバリー'}, {id: 41, name: 'キルシティ'}, {id: 42, name: 'ギャルリー ヴィー'},
+      {id: 43, name: 'クイーン ケリー'}, {id: 44, name: 'クーポール'}, {id: 45, name: 'クプクプ'},
+      {id: 46, name: 'クリスティーニューヨーク'}, {id: 47, name: 'グッディグラムス'}, {id: 48, name: 'その他'}
+  ]
 end
