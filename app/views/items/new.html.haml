@@ -1,3 +1,5 @@
+- breadcrumb :new_item
+= render "shared/gretel"
 .i-n
   .i-n__inner
     = form_for @item do |f|
@@ -54,7 +56,7 @@
                 ブランド
               %p.not_hissu
                 任意
-            = f.select :brand_id, {シャネル: 1, エルメス: 2}, { include_blank: '選択してください' }, class: 'form-content--select'
+            = f.collection_select :brand_id, Brand.all, :id, :name,{ include_blank: '選択してください' }, class: 'form-content--select'
           .i-n-categories__inner__condition
             .teams
               %h3.i-n-team

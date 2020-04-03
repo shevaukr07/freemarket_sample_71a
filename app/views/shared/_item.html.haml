@@ -2,6 +2,9 @@
   = link_to item_path(item), class: "" do
     .item-share__image
       = image_tag item.item_images[0].image.url , alt: "商品画像", class: "",size: "187x187"
+      - if item.purchase_id == 1
+        .sold-label
+          Sold Out
     .item-share__bottom
       %span.item-share__bottom__title
         =item.name
@@ -9,4 +12,3 @@
     .item-share__price
       %p.yen-logo ¥
       = item.price
-

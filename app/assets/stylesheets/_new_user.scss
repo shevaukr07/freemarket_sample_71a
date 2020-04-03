@@ -14,50 +14,37 @@
     .form-name{
       text-align: left;
       font-size: 2rem;
-      margin: 4rem 0;   
+      margin: 4rem 0;
     }
 
     .form-name-kana{
       text-align: left;
       font-size: 2rem;
-      margin: 4rem 0;   
+      margin: 4rem 0;
     }
 
     .form-barthday{
       text-align: left;
       font-size: 2rem;
-      margin: 4rem 0;  
+      margin: 4rem 0;
     }
 
-    #user_last_name.form-group__input--half{
-      border-width: thin;
-      height: 4rem;
-      width: 25rem;
-      margin-right: 1rem;
-    }
-
-    #user_first_name.form-group__input--half{
-      border-width: thin;
-      height: 4rem;
-      width: 25rem;
-      margin-left: 1rem;
-    }
 
     #birthday_birthday_1i.year{
-      height: 3rem;
+      height: 4rem;
       width: 15rem;
     }
 
     #birthday_birthday_2i.month{
-      height: 3rem;
+      height: 4rem;
       width: 10rem;
     }
 
     #birthday_birthday_3i.day{
-      height: 3rem;
+      height: 4rem;
       width: 10rem;
     }
-    
+
 
     .form-group-text-title{
       font-size: 2rem;
@@ -74,4 +61,12 @@
       text-align: center;
       margin-top: 5rem;
     }
-    
+
+    .half-contnets {
+      display: flex;
+    }
+    .input-half {
+        height: 4rem;
+        width: 20rem;
+        margin-right: 1rem;
+      }

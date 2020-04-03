@@ -1,0 +1,13 @@
+.gretel {
+  &__lists {
+    list-style: none;
+    &__list {
+      padding: 1rem;
+      margin-right: 3rem;
+      .breadcrumbs-list {
+        font-size: 1rem;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

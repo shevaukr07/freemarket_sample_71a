@@ -31,19 +31,19 @@
         margin-left: auto;
         display: flex;
         align-items: center;
-        form {
+        .form {
           width: 100%;
           display: flex;
           margin-bottom: 0.5rem;
           .search-fild {
-            width: calc(100% - 2.6rem);
+            width: calc(100% - 4rem);
             height: 3.6rem;
             color: #000000;
           }
           .search-btn {
-            width: 3.6rem;
+            width: 4rem;
             background-color: #3CCACE;
-            padding: 0.8rem;
+            padding: 0.4rem;
             cursor: pointer;
             &__box {
               padding: 0;
@@ -51,8 +51,8 @@
               width: 100%;
               text-align: center;
               .search-icon {
-                width: 100%;
-                height: 100%;
+                width: 4rem;
+                height: 4rem;
                 color: #ffffff;
                 vertical-align: bottom;
                 object-fit: cover;
@@ -62,6 +62,13 @@
         }
       }
     }
+    .search-icon {
+      width: 2rem;
+      height: 2rem;
+      color: #ffffff;
+      vertical-align: bottom;
+      object-fit: cover;
+    }
     .header-nav {
       font-size: 1.4rem;
       display: flex;
@@ -69,7 +76,13 @@
       margin-bottom: 1rem;
       color: #000000;
       padding: 0;
+      .header-nav__left{
+        display: flex;
+        list-style: none;
+        margin: 0;
+      }
       &__left {
+        z-index: 1000;
         display: flex;
         list-style: none;
         margin: 0;
@@ -80,7 +93,53 @@
             text-decoration: none;
             color: #333;
             line-height: 3.2rem;
-            padding-right: 3rem;
+          }
+        }
+        a{
+          text-decoration: none;
+        }
+        .category_list{
+          line-height: 3.8rem;
+          margin-left: 1rem;
+          display: flex;
+          
+          .parents_list{
+            display: none;
+            padding: 0;
+            position: absolute;
+            left: 36rem;
+            list-style: none;
+            border-left: 1px solid lightgray;
+            li{
+              background-color: #fff;
+              width: 150px;
+            }
+            li:hover{
+              background-color: #c2c2c2;
+            }
+          }
+          .children_list{
+            position: absolute;
+            left: 51rem;
+            top: 9.6rem;
+            border-left: 1px solid lightgray;
+            .child_category{
+              display: block;
+              background-color: #fff;
+            }
+            .child_category:hover{
+              background-color: rgb(187, 186, 186);
+            }
+          }
+          .grand_children_list{
+            position: absolute;
+            left: 65rem;
+            top: 9.6rem;
+            border-left: 1px solid lightgray;
+            .grand_child_category{
+              display: block;
+              background-color: #fff;
+            }
           }
         }
       }
@@ -101,3 +160,7 @@
     }
   }
 }
+
+
+
+  
