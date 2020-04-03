@@ -23,8 +23,10 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:show,:destroy]
-
+  
+  
   resources :items do
+    resources :favorites, only: [:index,:create,:destroy] 
     collection do
       post 'purchase'
       get 'get_category_children', defaults: { format: 'json' }

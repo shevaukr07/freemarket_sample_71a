@@ -33,7 +33,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     @user.build_address(@address.attributes)
     @user.save
     sign_in(:user, @user)
-    flash[:notice] = "登録が完了しました"
+    flash[:notice] = "ようこそFURIMAへ！"
     redirect_to root_path
     # session["address"] = @address.attributes
     # @creditcard = @user.build_card
