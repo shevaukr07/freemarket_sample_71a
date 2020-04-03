@@ -60,11 +60,7 @@ Rails.application.routes.draw do
       get 'done', to: 'purchase#done'
     end
   end
-  # get 'items/purchase' :to 'items#purchase'
-
-
 
   resources :addresses, only: [:edit, :update]
-
 end
 

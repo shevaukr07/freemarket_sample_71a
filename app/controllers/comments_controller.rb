@@ -4,6 +4,10 @@ class CommentsController < ApplicationController
     redirect_to "/items/#{comment.item.id}"
   end
 
+  # def destroy
+  #   @comment =Comment.find(params[:id])
+  # end
+
   private
   def comment_params
     params.require(:comment).permit(:text).merge(user_id: current_user.id, item_id: params[:item_id])

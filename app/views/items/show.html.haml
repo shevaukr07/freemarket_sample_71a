@@ -122,6 +122,8 @@
               .chat__comment__box__right
                 .chat__comment__box__right__name
                   = link_to chat.user.nickname,"/users/#{chat.user_id}"
+                -# .chat__comment__box__right__edit
+                -#   = link_to item_comment_path(@comments), method: :delete
                 .chat__comment__box__right__text
                   = chat.text
                   .chat__comment__box__right__text__hukidashi
