@@ -37,7 +37,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
     binding.pry
     @user.save
     sign_in(:user, @user)
-    flash[:notice] = "登録が完了しました"
+    flash[:notice] = "ようこそFURIMAへ！"
     redirect_to root_path
   end
 

@@ -14,5 +14,7 @@ class User < ApplicationRecord
   has_one :card
   has_many :buyer_transactions, class_name: 'Transaction', :foreign_key => 'buyer_id'
   has_many :seller_transactions, class_name: 'Transaction', :foreign_key => 'seller_id'
+  has_many :favorites, dependent: :destroy
+  has_many :items, through: :favorites
   has_many :comments,  dependent: :destroy
 end

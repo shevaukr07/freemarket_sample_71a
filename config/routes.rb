@@ -22,8 +22,10 @@ Rails.application.routes.draw do
     end
   end
   resources :users, only: [:show,:destroy]
-
+  
+  
   resources :items do
+    resources :favorites, only: [:index,:create,:destroy] 
     resources :comments, only: :create
     collection do
       post 'purchase'
