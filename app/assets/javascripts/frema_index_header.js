@@ -3,8 +3,19 @@ $(document).on('turbolinks:load', function () {
 $(function() {
   $('.category_list .header-nav-link').on("click",function(e){
     e.preventDefault(e);
-    $('.parents_list .display-none').slideDown();
+    if ($('.parents_list .display-none').is(':visible')) {
+      $('.parents_list .display-none').slideUp();
+    } else {
+      $('.parents_list .display-none').slideDown();
+    };
   });
+  // if ($('#obj').is(':visible')) {
+  //   // 表示の場合
+  //   console.debug('表示');
+  // } else {
+  //   // 非表示の場合
+  //   console.debug('非表示');
+  // }
   
 
 
