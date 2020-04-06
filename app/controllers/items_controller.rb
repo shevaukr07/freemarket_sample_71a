@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   require 'payjp'
+  before_action :seller?, only: [:destroy, :edit]
 
   def index
     @items = Item.where(purchase_id: nil)
@@ -77,6 +78,12 @@ class ItemsController < ApplicationController
   def search
     @items = Item.search(params[:keyword])
   end
+
+  def seller?
+    @item = Item.find(params[:id])
+    redirect_to root_path unless current_user.id == @item.seller_id
+  end
+
   private
 
   def item_params
@@ -99,4 +106,3 @@ class ItemsController < ApplicationController
   end
 
 end
-
