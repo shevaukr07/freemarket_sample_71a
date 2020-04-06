@@ -1,10 +1,12 @@
 
 $(document).on('turbolinks:load', function () {
-$(function() {
-
+$(function(e) {
+  event.preventDefault(e);
   $('.close-category').on("click",function(){
     $('.parents_list').slideDown();
   });
+
+
   // $('.parents_list').on("hover",function(){
   //   $('.parents_list').slideUp();
   // });
