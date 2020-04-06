@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :category
 
-
+ 
 
   def category
     @parents = Category.where(ancestry: nil).limit(13)

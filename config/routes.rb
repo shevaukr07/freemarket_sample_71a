@@ -3,6 +3,11 @@ Rails.application.routes.draw do
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'tests#index'
+  
+  # ゲストログイン 購入1 出品2
+  post '/guest', to: 'guest_sessions#create'
+  post '/guest2', to: 'guest_sessions#create2'
+
   resources :categorys, only: [:new,:show,:index]
 
   devise_for :users, controllers: {
@@ -64,5 +69,7 @@ Rails.application.routes.draw do
   end
 
   resources :addresses, only: [:edit, :update]
+
+  
 end
 

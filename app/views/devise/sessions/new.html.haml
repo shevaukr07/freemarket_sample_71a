@@ -12,6 +12,9 @@
               必須
           = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-content'
         .form-group
+          .teams
+            %h3.i-n-team
+              パスワード
           = f.password_field :password, autocomplete: "current-password", class: 'form-content'
         - if devise_mapping.rememberable?
           .form-group__content
@@ -21,4 +24,6 @@
         .form-group.submit-content
           = f.submit "ログイン", class: 'form-submit'
           = render "devise/shared/links"
-          
+          = link_to "ゲスト購入ログイン",guest_path, method: :post,class: 'form-submit' ,style:'background-color:green'
+          %br
+          = link_to "ゲスト出品ログイン",guest2_path, method: :post,class: 'form-submit',style:'background-color:green'
