@@ -5,6 +5,8 @@ $(function() {
     e.preventDefault(e);
     if ($('.parents_list .display-none').is(':visible')) {
       $('.parents_list .display-none').slideUp();
+      $('.children_list').slideUp();
+      $('.grand_children_list').slideUp();
     } else {
       $('.parents_list .display-none').slideDown();
     };
