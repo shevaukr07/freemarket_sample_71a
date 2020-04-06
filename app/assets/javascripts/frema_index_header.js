@@ -1,10 +1,11 @@
 
 $(document).on('turbolinks:load', function () {
-$(function(e) {
-  event.preventDefault(e);
-  $('.close-category').on("click",function(){
-    $('.parents_list').slideDown();
+$(function() {
+  $('.category_list .header-nav-link').on("click",function(e){
+    e.preventDefault(e);
+    $('.parents_list .display-none').slideDown();
   });
+  
 
 
   // $('.parents_list').on("hover",function(){
