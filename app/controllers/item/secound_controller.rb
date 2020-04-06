@@ -1,5 +1,5 @@
 class Item::SecoundController < ApplicationController
-before_action :return_seller, only: [:show]
+before_action :buyer?, only: [:show]
 before_action :configure_sign_up_params, only: [:create]
 
   def index
@@ -19,7 +19,7 @@ before_action :configure_sign_up_params, only: [:create]
     @items = Item.where(seller_id: @user)
   end
 
-  def return_seller
+  def buyer?
     @item = Item.find(params[:id])
     redirect_to item_path(@item) if current_user.id == @item.seller_id
   end
