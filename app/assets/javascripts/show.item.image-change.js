@@ -1,3 +1,4 @@
+$(document).on('turbolinks:load', function () {
 $(function(){
   $('.item__left__subpic img').click(function(){
    var $thisImg = $(this).attr('src');
@@ -5,3 +6,4 @@ $(function(){
    $('.item__left__mainpic img').attr({src:$thisImg,alt:$thisAlt});
   });
  });
+});
