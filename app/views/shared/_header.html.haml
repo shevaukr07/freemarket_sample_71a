@@ -11,9 +11,15 @@
             = image_tag 'material/icon/icon-search 1.png',class:"search-icon"
     %nav.header-nav
       .header-nav__left
-        .header-nav__left__item.add_Anime_atag
-          = link_to "#", class: "header-nav-link" do
-            ブランド
+        .header-nav__left__item
+          .add_Anime_atag
+            = link_to "#", class: "header-nav-link brand" do
+              ブランド
+          %ul.brand-lists
+            - @brands.each.with_index(1) do |brand,i|
+              %li.brand-list
+                = link_to brand_path(brand), class: "brand-list__link" do
+                  = brand.name
         .header-nav__left__item
           .category_list
             .add_Anime_atag

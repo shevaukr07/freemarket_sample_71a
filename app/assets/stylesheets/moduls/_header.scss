@@ -76,7 +76,7 @@
       margin-bottom: 1rem;
       color: #000000;
       padding: 0;
-      
+
       &__left{
         display: flex;
         list-style: none;
@@ -95,13 +95,45 @@
           color: #333;
           line-height: 3.2rem;
           height: 3.2rem;
-          
+
         }
+        .header-nav-link.brand {
+         position: relative;
+        }
+        .brand-lists {
+          position: absolute;
+          display: none;
+          list-style: none;
+          overflow-y: auto;
+          background-color: #fff;
+          height: 20rem;
+          width: 18rem;
+          top: 10rem;
+          left: 18rem;
+          padding: 0;
+          border-radius: 5%;
+          .brand-list {
+               font-size: 1.4rem;
+               padding: 0.5rem 1rem;
+            &__link {
+              text-decoration: none;
+              color: #000000;
+            }
+            &__link:hover {
+              text-decoration: none;
+              color: #000000;
+            }
+          }
+          .brand-list:hover {
+            background: rgb(187, 186, 186);
+          }
+        }
+
         .category_list{
           line-height: 3.2rem;
           margin-left: 1rem;
           display: flex;
-          
+
           .parents_list{
             .display-none{
               display: none;
@@ -204,5 +236,3 @@
   }
   // アニメーションエンド
 }
-
-  
