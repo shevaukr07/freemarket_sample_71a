@@ -35,6 +35,7 @@
             %th
               ブランド
             %td
+            -if @item.brand_id.present?
               = @item.brand.name
           %tr
             %th
