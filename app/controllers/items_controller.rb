@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   require 'payjp'
+  before_action :seller?, only: [:destroy, :edit]
 
   def index
     @items = Item.where(purchase_id: nil)
@@ -41,18 +42,30 @@ class ItemsController < ApplicationController
 
   def edit
     @item = Item.find(params[:id])
+    if @item.seller_id == current_user.id
+      
+    else
+      redirect_to root_path
+    end
   end
 
   def update
+    # 勉強用に残してね
+
+    # binding.pry
     @item = Item.find(params[:id])
-    @new_item = Item.new(item_update_params)
-    unless @new_item.valid?
+    # @new_item = Item.new(item_update_params)
+    # unless @new_item.valid?
+    #   flash[:alert] = "必須項目を確認してください"
+    #   redirect_to edit_item_path and return
+    # end
+    if @item.update(item_params)
+    flash[:notice] = "編集が完了しました"
+    redirect_to root_path and return
+    else
       flash[:alert] = "必須項目を確認してください"
       redirect_to edit_item_path and return
     end
-    @item.update(item_update_params)
-    flash[:notice] = "編集が完了しました"
-    redirect_to root_path and return
   end
 
   def destroy
@@ -77,10 +90,16 @@ class ItemsController < ApplicationController
   def search
     @items = Item.search(params[:keyword])
   end
+
+  def seller?
+    @item = Item.find(params[:id])
+    redirect_to root_path unless current_user.id == @item.seller_id
+  end
+
   private
 
   def item_params
-    params.require(:item).permit(:name, :price, :introduce, :brand_id, :category_id, :size_id, :commodity_condition_id, :shipping_charge_id, :shipping_method_id,:prefecture_id, :shipping_day_id, item_images_attributes: [:image]).merge(seller_id: current_user.id).merge(buyer_id: current_user.id)
+    params.require(:item).permit(:name, :price, :introduce, :brand_id, :category_id, :size_id, :commodity_condition_id, :shipping_charge_id, :shipping_method_id,:prefecture_id, :shipping_day_id, item_images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id).merge(buyer_id: current_user.id)
   end
 
   def item_update_params
@@ -99,4 +118,3 @@ class ItemsController < ApplicationController
   end
 
 end
-

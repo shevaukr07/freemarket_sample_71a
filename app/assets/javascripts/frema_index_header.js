@@ -1,10 +1,27 @@
 
-// $(document).on('turbolinks:load', function () {
+$(document).on('turbolinks:load', function () {
 $(function() {
+  $('.category_list .header-nav-link').on("click",function(e){
+    e.preventDefault(e);
+    if ($('.parents_list .display-none').is(':visible')) {
+      $('.parents_list .display-none').slideUp();
+      // $('.children_list').slideUp();
+      // $('.grand_children_list').slideUp();
+      $(".child_category").remove();//一旦出ている子カテゴリ消します！
+      $(".grand_child_category").remove();//
+    } else {
+      $('.parents_list .display-none').slideDown();
+    };
+  }); 
 
-  $('.close-category').on("click",function(){
-    $('.parents_list').slideDown();
-  });
+  // $('.parents_list').on('mouseout',function(){
+  //   $('.parents_list').slideUp();
+  // });
+
+  // $('.parents_list').on('mouseout',function(){
+  //   $('.parents_list').slideUp();
+  // });
+
   // $('.parents_list').on("hover",function(){
   //   $('.parents_list').slideUp();
   // });
@@ -23,6 +40,7 @@ $(function() {
 
   $(".parent_category").on("mouseover", function() {
     var id = this.id//どのリンクにマウスが乗ってるのか取得します
+    // console.log(id);
     $(".now-selected-red").removeClass("now-selected-red")//赤色のcssのためです
     $('#' + id).addClass("now-selected-red");//赤色のcssのためです
     $(".child_category").remove();//一旦出ている子カテゴリ消します！
@@ -34,8 +52,10 @@ $(function() {
       dataType: 'json'
     })
     .done(function(children) {
+      // console.log(children);
       children.forEach(function (child) {//帰ってきた子カテゴリー（配列）
         var html = buildChildHTML(child);//HTMLにして
+        console.log();
         $(".children_list").append(html);//リストに追加します
       })
     });
@@ -68,4 +88,4 @@ $(function() {
     });
   });  
 });
-// });
+});

@@ -5,35 +5,36 @@
         = link_to root_path, class: "icon__link" do
           = image_tag 'material/logo/logo.png', alt:'main-icon', class: 'main-icon'
       .header-form-box
-        -# %form
-        -#   %input(type="text" class="search-fild")
-        -#   %button.search-btn
-        -#     .search-btn__box
-        -#       = image_tag 'material/icon/icon-search 1.png', class:"search-icon"
         = form_tag(search_items_path, method: :get ,class:'form') do
           = text_field_tag :keyword, "", {class: "search-fild"}
-          -# = submit_tag "検索", class: "search-btn"
           = button_tag type: :submit, class: "search-btn" do
             = image_tag 'material/icon/icon-search 1.png',class:"search-icon"
     %nav.header-nav
       .header-nav__left
         .header-nav__left__item
-          = link_to "#", class: "header-nav-link" do
-            ブランド
+          .add_Anime_atag
+            = link_to "#", class: "header-nav-link brand" do
+              ブランド
+          %ul.brand-lists
+            - @brands.each.with_index(1) do |brand,i|
+              %li.brand-list
+                = link_to brand_path(brand), class: "brand-list__link" do
+                  = brand.name
         .header-nav__left__item
-          %i.fas.fa-book-open.close-category
-        .category_list
-          = link_to "#", class: "header-nav-link" do
-            カテゴリー
-          %ul.parents_list
-            - @parents.each do |parent|
-              %li
-                = link_to "#{parent.name}", "/categorys/#{parent.id}", class: "parent_category",id: "#{parent.id}"
-          .children_list
+          .category_list
+            .add_Anime_atag
+              = link_to "#", class: "header-nav-link" do
+                カテゴリー
+            %ul.parents_list
+              - @parents.each do |parent|
+                %li
+                  = link_to  "/categorys/#{parent.id}", class: "parent_category display-none",id: "#{parent.id}" do
+                    #{parent.name}
+            .children_list
 
-          .grand_children_list
+            .grand_children_list
 
-      %ul.header-nav__right
+      %ul.header-nav__right.add_Anime_atag
 
         - if user_signed_in?
           %li.header-nav__right__item

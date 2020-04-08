@@ -76,43 +76,82 @@
       margin-bottom: 1rem;
       color: #000000;
       padding: 0;
-      .header-nav__left{
+
+      &__left{
         display: flex;
         list-style: none;
         margin: 0;
-      }
-      &__left {
         z-index: 1000;
         display: flex;
         list-style: none;
         margin: 0;
         padding: 0;
         &__item {
-          line-height: 3.8rem;
-          .header-nav-link {
-            text-decoration: none;
-            color: #333;
-            line-height: 3.2rem;
+          line-height: 3.2rem;
+          display: flex;
+        }
+        .header-nav-link {
+          text-decoration: none;
+          color: #333;
+          line-height: 3.2rem;
+          height: 3.2rem;
+
+        }
+        .header-nav-link.brand {
+         position: relative;
+        }
+        .brand-lists {
+          position: absolute;
+          display: none;
+          list-style: none;
+          overflow-y: auto;
+          background-color: #fff;
+          height: 20rem;
+          width: 18rem;
+          top: 10rem;
+          left: 18rem;
+          padding: 0;
+          border-radius: 5%;
+          .brand-list {
+               font-size: 1.4rem;
+               padding: 0.5rem 1rem;
+            &__link {
+              text-decoration: none;
+              color: #000000;
+            }
+            &__link:hover {
+              text-decoration: none;
+              color: #000000;
+            }
+          }
+          .brand-list:hover {
+            background: rgb(187, 186, 186);
           }
         }
-        a{
-          text-decoration: none;
-        }
+
         .category_list{
-          line-height: 3.8rem;
+          line-height: 3.2rem;
           margin-left: 1rem;
           display: flex;
-          
+
           .parents_list{
-            display: none;
+            .display-none{
+              display: none;
+              width: 100%;
+            }
             padding: 0;
             position: absolute;
             left: 36rem;
+            top: 10rem;
             list-style: none;
             border-left: 1px solid lightgray;
+            width: 18rem;
+            a {
+              text-decoration: none;
+              color: #333;
+            }
             li{
               background-color: #fff;
-              width: 150px;
             }
             li:hover{
               background-color: #c2c2c2;
@@ -120,9 +159,14 @@
           }
           .children_list{
             position: absolute;
-            left: 51rem;
-            top: 9.6rem;
+            left: 54rem;
+            top: 11.4rem;
             border-left: 1px solid lightgray;
+            width: 20rem;
+            a {
+              text-decoration: none;
+              color: #333;
+            }
             .child_category{
               display: block;
               background-color: #fff;
@@ -133,12 +177,19 @@
           }
           .grand_children_list{
             position: absolute;
-            left: 65rem;
-            top: 9.6rem;
+            left: 74rem;
+            top: 11.4rem;
             border-left: 1px solid lightgray;
+            a {
+              text-decoration: none;
+              color: #333;
+            }
             .grand_child_category{
               display: block;
               background-color: #fff;
+            }
+            .grand_child_category:hover{
+              background-color: rgb(187, 186, 186);
             }
           }
         }
@@ -153,7 +204,7 @@
             text-decoration: none;
             color: #333;
             line-height: 3.2rem;
-            padding-left: 3rem;
+            margin-left: 3rem;
           }
         }
       }
@@ -161,6 +212,28 @@
   }
 }
 
+.add_Anime_atag{
+  // ヘッダーアニメーション
+  a {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+  }
+  a::after {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: rgb(85, 64, 71);
+    transform: scale(0, 1);
+    transform-origin: left top;
+    transition: transform .3s;
 
-
-  
+  }
+  a:hover::after {
+    transform: scale(1, 1);
+  }
+  // アニメーションエンド
+}
