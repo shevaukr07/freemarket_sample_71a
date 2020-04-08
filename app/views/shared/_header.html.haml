@@ -27,7 +27,7 @@
                 カテゴリー
             %ul.parents_list
               - @parents.each do |parent|
-                %li.div
+                %li
                   = link_to  "/categorys/#{parent.id}", class: "parent_category display-none",id: "#{parent.id}" do
                     #{parent.name}
             .children_list
