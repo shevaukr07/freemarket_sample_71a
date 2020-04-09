@@ -63,7 +63,7 @@
             %td
               = @item.shipping_day.value
 
-      
+
   .middle
     .item-explain
       .item-explain__price
@@ -118,13 +118,14 @@
       .buyer-profile__name
         = link_to user_path(@user), class: "user-page-link" do
           = @user.nickname
-    .comment
-      .comment__attention
-        相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
-      
-      =form_for([@item, @comment], local: true) do |form|
-        =form.text_area :text, placeholder: "コメントする", rows: "3", class: "comment-field"
-        =form.submit "SEND", class:"btn"
+    - if user_signed_in?
+      .comment
+        .comment__attention
+          相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+
+        =form_for([@item, @comment], local: true) do |form|
+          =form.text_area :text, placeholder: "コメントする", rows: "3", class: "comment-field"
+          =form.submit "SEND", class:"btn"
     .chat
       %h1.font
         ＜コメント一覧＞
