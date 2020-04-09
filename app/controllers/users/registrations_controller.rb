@@ -69,7 +69,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 private
 
   def address_params
-    params.require(:address).permit(:address,:postal_code, :prefecture_id, :city, :apartment)
+    params.require(:address).permit(:name, :name_kana, :address,:postal_code, :prefecture_id, :city, :apartment)
   end
 
   def creditcard_params
