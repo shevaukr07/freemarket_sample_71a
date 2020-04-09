@@ -8,6 +8,20 @@
         .form-group
           .teams
             %h3.i-n-team
+              送付先氏名
+            %p.hissu
+              必須
+          = f.text_field :name, autofocus: true, class: 'form-content'
+        .form-group
+          .teams
+            %h3.i-n-team
+              送付先氏名かな
+            %p.hissu
+              必須
+          = f.text_field :name_kana, autofocus: true, class: 'form-content'
+        .form-group
+          .teams
+            %h3.i-n-team
               郵便番号
             %p.hissu
               必須
