@@ -1,7 +1,7 @@
 server '52.196.14.28', user: 'ec2-user', roles: %w{app db web}
 
 
-set :rails_env, "production"
+set :rails_env, "production" 
 set :unicorn_rack_env, "production"
 # server-based syntax
 # ======================
